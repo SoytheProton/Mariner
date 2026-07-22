@@ -1,0 +1,16 @@
+{
+  "MARINER-MARINER.aromaPrinciple": "Lore",
+  "MARINER-MARINER.banter.alive.endTurnPing": "Co-op hurry up end turn ping message",
+  "MARINER-MARINER.banter.dead.endTurnPing": "...",
+  "MARINER-MARINER.cardsModifierDescription": "__ cards will now appear in rewards and shops.",
+  "MARINER-MARINER.cardsModifierTitle": "__ Cards",
+  "MARINER-MARINER.description": "Character Selection\nScreen Description",
+  "MARINER-MARINER.eventDeathPrevention": "Co-op survival line",
+  "MARINER-MARINER.goldMonologue": "Line spoken when obtaining a large amount of gold",
+  "MARINER-MARINER.possessiveAdjective": "his/her/its",
+  "MARINER-MARINER.pronounObject": "him/her/it",
+  "MARINER-MARINER.pronounPossessive": "his/hers/its",
+  "MARINER-MARINER.pronounSubject": "he/she/it",
+  "MARINER-MARINER.title": "The Mariner",
+  "MARINER-MARINER.titleObject": "The Mariner"
+}
