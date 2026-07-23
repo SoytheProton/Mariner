@@ -1,3 +1,7 @@
 {
-  
+  "MARINER-TRAWL.description": "Added to your [gold]Hand[/gold] if [gold]Submerged[/gold].",
+  "MARINER-TRAWL.title": "Trawl",
+
+  "MARINER-BALLAST.description": "This card is not shuffled back into the [gold]Draw Pile[/gold].",
+  "MARINER-BALLAST.title": "Ballast"
 }

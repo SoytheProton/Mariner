@@ -4,6 +4,7 @@ using BaseLib.Utils;
 using Mariner.MarinerCode.Character;
 using Mariner.MarinerCode.Extensions;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Models;
 
 namespace Mariner.MarinerCode.Cards;
 
