@@ -5,8 +5,5 @@ namespace Mariner.MarinerCode.Interfaces;
 
 public interface IAbyssalHook
 {
-    public Task BeforeCardShuffled(PlayerChoiceContext choiceContext, CardModel card)
-    {
-        return Task.CompletedTask;
-    }
+    public Task BeforeCardShuffled(PlayerChoiceContext choiceContext, CardModel card);
 }

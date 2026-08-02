@@ -1,167 +1,118 @@
 ﻿using System.Reflection;
 using System.Reflection.Emit;
-using System.Runtime.CompilerServices;
-using BaseLib.Utils;
 using BaseLib.Utils.Patching;
-using Godot;
 using HarmonyLib;
 using Mariner.MarinerCode.Cards;
 using Mariner.MarinerCode.Commands;
+using Mariner.MarinerCode.Interfaces;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
-using Label = System.Reflection.Emit.Label;
 
 namespace Mariner.MarinerCode.Patches;
 
 public class AbyssalBallastPatches
 {
+    [HarmonyDebug]
     [HarmonyPatch(typeof(CardPileCmd), nameof(CardPileCmd.Shuffle), MethodType.Async)]
     public class BallastPatch
     {
-        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            var codeMatcher = new CodeMatcher(instructions, generator);
+            var codeMatcher = new CodeMatcher(instructions);
 
             var ballast = AccessTools.Method(typeof(BallastPatch), nameof(BallastPileChanger));
 
             codeMatcher.MatchStartForward(
-                    new CodeMatch(OpCodes.Ldloc_S),
+                    new CodeMatch(OpCodes.Ldc_I4_3),
                     new CodeMatch(OpCodes.Ldarg_0),
                     new CodeMatch(OpCodes.Ldfld),
-                    new CodeMatch(OpCodes.Ldc_I4_1),
-                    new CodeMatch(OpCodes.Ldnull),
-                    new CodeMatch(OpCodes.Ldc_I4_0)
+                    new CodeMatch(OpCodes.Call),
+                    new CodeMatch(OpCodes.Callvirt),
+                    new CodeMatch(OpCodes.Call),
+                    new CodeMatch(OpCodes.Stloc_2)
                 )
-                .ThrowIfInvalid("Couldn't find CardPileCmd.Add for BallastPatch")
-                .Advance()
+                .ThrowIfInvalid("Couldn't find list for BallastPatch")
+                .Advance(7)
                 .InsertAndAdvance(
-                    new CodeInstruction(OpCodes.Dup))
-                .Advance(2)
-                .InsertAndAdvance(
-                    new CodeInstruction(OpCodes.Call, ballast));
+                    new CodeInstruction(OpCodes.Ldloc_2),
+                    new CodeInstruction(OpCodes.Call, ballast),
+                    new CodeInstruction(OpCodes.Stloc_2));
             
             return codeMatcher.InstructionEnumeration();
         }
 
-        private static CardPile BallastPileChanger(CardModel card, CardPile pile)
+        private static List<CardModel> BallastPileChanger(List<CardModel> cards)
         {
-            if(!card.Keywords.Contains(MarinerCardKeywords.Ballast))
-                return pile;
-            return PileType.Discard.GetPile(card.Owner);
+            return cards.Where(card => !card.Keywords.Contains(MarinerCardKeywords.Ballast)).ToList();
         }
     }
     
-    [HarmonyDebug]
+    [HarmonyPatch(typeof(CardPileCmd), nameof(CardPileCmd.CheckIfDrawIsPossibleAndShowThoughtBubbleIfNot))]
+    public class BallastPatchPartTwo
+    {
+        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var codeMatcher = new CodeMatcher(instructions);
+
+            var ballast = AccessTools.Method(typeof(BallastPatchPartTwo), nameof(Subtraction));
+
+            codeMatcher.MatchStartForward(
+                    new CodeMatch(OpCodes.Add))
+                .ThrowIfInvalid("Couldn't find list for BallastPatch")
+                .Advance()
+                .InsertAndAdvance(
+                    new CodeInstruction(OpCodes.Ldarg_0),
+                    new CodeInstruction(OpCodes.Call, ballast),
+                    new CodeInstruction(OpCodes.Sub));
+            
+            return codeMatcher.InstructionEnumeration();
+        }
+
+        private static int Subtraction(Player player)
+        {
+            return PileType.Discard.GetPile(player).Cards.Count(c => c.Keywords.Contains(MarinerCardKeywords.Ballast));
+        }
+    }
+    
     [HarmonyPatch(typeof(CardPileCmd), nameof(CardPileCmd.Shuffle), MethodType.Async)]
     public class AbyssalPatch
     {
-        private static readonly SpireField<PlayerCombatState, CardModel> CardArgHolder = new(_ => null);
-        
         [HarmonyTranspiler]
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator, MethodBase original)
         {
-            MethodBase methodBase = AccessTools.Method(typeof(CardPileCmd), nameof(CardPileCmd.Add), [typeof(CardModel), typeof(CardPile), typeof(CardPilePosition), typeof(AbstractModel), typeof(bool)]);
-            var asyncInstructions = AsyncMethodCall.Create(generator, instructions, original,
-                AccessTools.Method(typeof(AbyssalPatch), nameof(AbyssalTask)), beforeState: methodBase);
-            
-            var codeMatcher = new CodeMatcher(asyncInstructions, generator);
-
-            var getCurrent = AccessTools.Method(typeof(List<CardModel>.Enumerator), "get_Current");
-            
-            var stateMachineType = AccessTools.Method(typeof(CardPileCmd), nameof(CardPileCmd.Shuffle))
-                .GetCustomAttribute<AsyncStateMachineAttribute>().StateMachineType;
-
-            var cardMethod = AccessTools.Method(typeof(AbyssalPatch), nameof(SetCard));
-                
-            var bullshit = stateMachineType.GetField("<>7__wrap6", // Incase this breaks, do it more "responsibly" by adding a label where it goes to the card correctly and sets it. Basically br -> card set br -> back, when it goes to card set br past it. 
-                BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
-
-            var label = generator.DefineLabel();
-            var labeledInstruction = new CodeInstruction(OpCodes.Ldarg_0);
-            labeledInstruction.labels.Add(label);
-
-            codeMatcher.MatchStartForward(
-                    new CodeMatch(OpCodes.Ldloc_0),
-                    new CodeMatch(OpCodes.Ldc_I4_1),
-                    new CodeMatch(OpCodes.Beq),
-                    new CodeMatch(OpCodes.Br)
-                )
-                .ThrowIfInvalid("Couldn't find AsyncMethodCall.Create for AbyssalPatch")
-                .Advance(4)
-                .InsertAndAdvance(
-                    labeledInstruction,
-                    new CodeInstruction(OpCodes.Ldflda, bullshit),
-                    new CodeInstruction(OpCodes.Call, getCurrent),
-                    new CodeInstruction(OpCodes.Stloc_S, (byte)4),
-                    new CodeInstruction(OpCodes.Ldloc_S, (byte)4),
-                    new CodeInstruction(OpCodes.Call, cardMethod));
-
-            codeMatcher.MatchStartForward(
-                    new CodeMatch(OpCodes.Ldarg_0),
-                    new CodeMatch(OpCodes.Ldflda),
-                    new CodeMatch(OpCodes.Call),
-                    new CodeMatch(OpCodes.Brtrue),
-                    new CodeMatch(OpCodes.Leave_S)
-                )
-                .ThrowIfInvalid("Couldn't find foreach (CardModel card in list) for AbyssalPatch")
-                .Advance(3)
-                .InsertAndAdvance(new CodeInstruction(OpCodes.Brtrue, label),
-                    new CodeInstruction(OpCodes.Ldc_I4_0));
-            
-            return codeMatcher.InstructionEnumeration();
+            return AsyncMethodCall.Create(generator, instructions, original,
+                AccessTools.Method(typeof(AbyssalPatch), nameof(AbyssalTask)), beforeState: original);
         }
         
-        private static async Task AbyssalTask(PlayerChoiceContext choiceContext, Player player) 
+        private static async Task AbyssalTask(PlayerChoiceContext choiceContext, Player player)
         {
-            MainFile.Logger.Info("ran");
-            await MarinerHook.BeforeCardShuffled(player.Creature.CombatState, choiceContext, CardArgHolder.Get(player.PlayerCombatState)); 
-        }
-        
-        private static void SetCard(CardModel card)
-        {
-            MainFile.Logger.Info("Card: " + card.Title);
-            CardArgHolder.Set(card.Owner.PlayerCombatState, card);
+            foreach (var card in PileType.Discard.GetPile(player).Cards.ToList())
+            {
+                if(card is not IAbyssalCard) 
+                    continue;
+                await AbyssalWrapper(choiceContext, card);
+                await MarinerHook.BeforeCardShuffled(player.Creature.CombatState, choiceContext, card);
+            }
         }
     }
     
-    /* IGNORE THIS.
-
-        var abyssalHook = AccessTools.Method(typeof(MarinerHook), nameof(MarinerHook.BeforeCardShuffled));
-        var arg = AccessTools.Method(typeof(AbyssalPatch), nameof(RandomBullshitGo));
-
-        if (methodBase == null)
-        {
-            throw new Exception("AHHHHHHHHHHHHHHHHHHHHHHHHHHH");
-        }
-
-        var async = AsyncMethodCall.Create(generator, instructions, original, arg, beforeState: methodBase);
-
-        var stateMachineType = AccessTools.Method(typeof(CardPileCmd), nameof(CardPileCmd.Shuffle))
-            .GetCustomAttribute<AsyncStateMachineAttribute>().StateMachineType;
-
-        var player = stateMachineType.GetField("player",
-            BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
-
-        var choiceContext = stateMachineType.GetField("choiceContext",
-            BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
-
-
-
-    }
-
-    private static async Task RandomBullshitGo(Player player, PlayerChoiceContext choiceContext, CardModel card)
+    public static async Task AbyssalWrapper(PlayerChoiceContext choiceContext, CardModel card)
     {
-        try
+        if (card is not IAbyssalCard abyssalCard)
         {
-            await MarinerHook.BeforeCardShuffled(player.Creature.CombatState, choiceContext, card);
-            MainFile.Logger.Info("It ran!!!!!!!!!!!!!!!!!!");
+            MarinerMainFile.Logger.Error("Why are we using AbyssalWrapper for non-Abyssal cards?");
+            return;
         }
-        catch (Exception e)
-        {
-            MainFile.Logger.Warn($"Async fucked up!!! {e}");
-        }
-    }*/
+
+        await CardPileCmd.Add(card, PileType.Play);
+        await abyssalCard.BeforeShuffled(choiceContext);
+        if (LocalContext.IsMe(card.Owner))
+            await Cmd.CustomScaledWait(0.1f, 0.2f);
+        await abyssalCard.BeforeShuffled(choiceContext);
+        await CardPileCmd.Add(card, card.Keywords.Contains(MarinerCardKeywords.Ballast) ? PileType.Discard.GetPile(card.Owner) : PileType.Draw.GetPile(card.Owner));
+    }
 }

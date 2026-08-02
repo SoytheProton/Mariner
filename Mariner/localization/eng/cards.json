@@ -1,4 +1,19 @@
 {
   "MARINER-CARD1.description": "",
-  "MARINER-CARD1.title": "Card1"
+  "MARINER-CARD1.title": "Ballast Demo",
+
+  "MARINER-CARD2.description": "",
+  "MARINER-CARD2.title": "Sunken Demo",
+
+  "MARINER-CARD3.description": "",
+  "MARINER-CARD3.title": "Abyssal Demo",
+
+  "MARINER-CARD4.description": "",
+  "MARINER-CARD4.title": "Submerge Demo",
+
+  "MARINER-CARD5.description": "",
+  "MARINER-CARD5.title": "Trawl Demo",
+
+  "MARINER-CARD6.description": "",
+  "MARINER-CARD6.title": "Dredge Demo"
 }

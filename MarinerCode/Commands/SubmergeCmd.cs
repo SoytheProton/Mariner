@@ -1,4 +1,5 @@
-﻿using Mariner.MarinerCode.Extensions;
+﻿using Mariner.MarinerCode.Cards;
+using Mariner.MarinerCode.Extensions;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -39,11 +40,13 @@ public static class SubmergeCmd
         if(submergedCards.Count == 0)
             return;
         var discardPile = PileType.Discard.GetPile(submergedCards[0].Owner);
+        var hand = PileType.Hand.GetPile(submergedCards[0].Owner);
         var combatState = submergedCards[0].CombatState ?? submergedCards[0].Owner.Creature.CombatState;
         
         foreach (var card in submergedCards)
         {
-            await CardPileCmd.Add(card, discardPile);
+            var targetPile = card.Keywords.Contains(MarinerCardKeywords.Trawl) ? hand : discardPile;
+            await CardPileCmd.Add(card, targetPile);
             CombatManager.Instance.History.CardSubmerged(combatState, card);
             await MarinerHook.AfterCardSubmerged(combatState, choiceContext, card);
         }

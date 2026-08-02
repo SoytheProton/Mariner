@@ -5,7 +5,7 @@ using MegaCrit.Sts2.Core.Modding;
 namespace Mariner.MarinerCode;
 
 [ModInitializer(nameof(Initialize))]
-public partial class MainFile : Node
+public partial class MarinerMainFile : Node
 {
     public const string ModId = "Mariner"; //Used for resource filepath
     public const string ResPath = $"res://{ModId}";

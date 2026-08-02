@@ -39,4 +39,20 @@ public class MarinerHook
             choiceContext.PopModel(model);
         }
     }
+    
+    public static async Task OnCardSunken(
+        ICombatState combatState,
+        PlayerChoiceContext choiceContext,
+        CardModel card)
+    {
+        foreach (var model in Hook.IterateCombatHookListeners(combatState))
+        {
+            if(model is not IAbyssalHook abyssalModel)
+                return;
+            choiceContext.PushModel(model);
+            await abyssalModel.BeforeCardShuffled(choiceContext, card);
+            model.InvokeExecutionFinished();
+            choiceContext.PopModel(model);
+        }
+    }
 }
