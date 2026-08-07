@@ -16,7 +16,6 @@ namespace Mariner.MarinerCode.Patches;
 
 public class AbyssalBallastPatches
 {
-    [HarmonyDebug]
     [HarmonyPatch(typeof(CardPileCmd), nameof(CardPileCmd.Shuffle), MethodType.Async)]
     public class BallastPatch
     {

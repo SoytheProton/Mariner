@@ -61,6 +61,11 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Folder Include="MarinerCode\Cards\Ancient\" />
+        <Folder Include="MarinerCode\Cards\Common\" />
+        <Folder Include="MarinerCode\Cards\Other\" />
+        <Folder Include="MarinerCode\Cards\Rare\" />
+        <Folder Include="MarinerCode\Cards\Uncommon\" />
         <Folder Include="Mariner\images\card_portraits\big\"/>
         <Folder Include="Mariner\images\powers\big\"/>
         <Folder Include="Mariner\images\relics\big\"/>

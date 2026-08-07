@@ -3,7 +3,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 
 namespace Mariner.MarinerCode.Cards;
 
-public class MarinerCardKeywords
+public static class MarinerCardKeywords
 {
     [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword Trawl;

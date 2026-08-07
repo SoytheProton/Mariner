@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Entities.Cards;
+﻿using Mariner.MarinerCode.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
@@ -15,6 +16,7 @@ public class Card1() : MarinerCard(1, CardType.Attack,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await BarnacleCmd.Spawn(choiceContext, Owner, this);
     }
 
     protected override void OnUpgrade()
