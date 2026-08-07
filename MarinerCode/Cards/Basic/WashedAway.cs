@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 
@@ -15,6 +16,8 @@ public class WashedAway() : MarinerCard(2, CardType.Attack,
     CardRarity.Basic, TargetType.AnyEnemy), ISunkenCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(16M, ValueProp.Move), new DamageVar("Damage2", 6M, ValueProp.Move)];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Sunken)];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

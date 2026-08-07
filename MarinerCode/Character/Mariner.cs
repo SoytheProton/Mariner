@@ -2,6 +2,7 @@
 using BaseLib.Utils.NodeFactories;
 using Mariner.MarinerCode.Extensions;
 using Godot;
+using Mariner.MarinerCode.Cards.Basic;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
@@ -21,16 +22,16 @@ public class Mariner : PlaceholderCharacterModel
 
     public override IEnumerable<CardModel> StartingDeck =>
     [
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>()
+        ModelDb.Card<StrikeMariner>(),
+        ModelDb.Card<StrikeMariner>(),
+        ModelDb.Card<StrikeMariner>(),
+        ModelDb.Card<StrikeMariner>(),
+        ModelDb.Card<DefendMariner>(),
+        ModelDb.Card<DefendMariner>(),
+        ModelDb.Card<DefendMariner>(),
+        ModelDb.Card<DefendMariner>(),
+        ModelDb.Card<WashedAway>(),
+        ModelDb.Card<ReefWalk>()
     ];
 
     public override IReadOnlyList<RelicModel> StartingRelics =>

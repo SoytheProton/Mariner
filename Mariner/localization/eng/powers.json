@@ -5,5 +5,13 @@
 
   "MARINER-PETRICHOR_POWER.description": "",
   "MARINER-PETRICHOR_POWER.smartDescription": "",
-  "MARINER-PETRICHOR_POWER.title": "Petrichor"
+  "MARINER-PETRICHOR_POWER.title": "Petrichor",
+
+  "MARINER-DEEPEST_DEPTHS_POWER.description": "",
+  "MARINER-DEEPEST_DEPTHS_POWER.smartDescription": "",
+  "MARINER-DEEPEST_DEPTHS_POWER.title": "Deepest Depths",
+  
+  "MARINER-LEAD_BOOTS_POWER.description": "",
+  "MARINER-LEAD_BOOTS_POWER.smartDescription": "",
+  "MARINER-LEAD_BOOTS_POWER.title": "LeadBootsPower"
 }

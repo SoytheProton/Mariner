@@ -1,0 +1,70 @@
+﻿using Mariner.MarinerCode.Cards;
+using Mariner.MarinerCode.Powers;
+using MegaCrit.Sts2.Core.CardSelection;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
+
+namespace Mariner.MarinerCode.Powers;
+
+public class DeepestDepthsPower() : MarinerPower
+{
+    public const string _cardKey = "Card";
+
+    public override PowerType Type => PowerType.Buff;
+
+    public override PowerInstanceType InstanceType => PowerInstanceType.Instanced;
+
+    public override PowerStackType StackType => PowerStackType.Single;
+
+    protected override object InitInternalData() => new Data();
+
+    protected override IEnumerable<DynamicVar> CanonicalVars=> [new StringVar("Card")];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromKeyword(MarinerCardKeywords.Ballast)];
+
+    public override async Task BeforeHandDraw(
+        Player player,
+        PlayerChoiceContext choiceContext,
+        ICombatState combatState)
+    {
+        DeepestDepthsPower power = this;
+        CardModel card;
+        if (player != Owner.Player)
+        {
+            card = null;
+        }
+        else
+        {
+            card = GetInternalData<Data>().selectedCard;
+            await CardPileCmd.AddGeneratedCardToCombat(card.CreateClone(), PileType.Hand, power.Owner.Player);
+            card = null;
+        }
+    }
+
+    public void SetSelectedCard(CardModel card)
+    {
+        CardModel clone = card.CreateClone();
+        CardCmd.ClearAffliction(clone);
+        CardCmd.ApplyKeyword(clone, MarinerCardKeywords.Ballast);
+        GetInternalData<Data>().selectedCard = clone;
+        ((StringVar) DynamicVars["Card"]).StringValue = clone.Title;
+    }
+
+    public class Data
+    {
+        /// <summary>
+        /// This will be null for the moment after this power is applied but before this is set by Nightmare.OnPlay.
+        /// For all current use cases, this means we should never see this being null.
+        /// However, if we needed to override AfterApplied in here in the future, this would be null in it, so let's
+        /// leave this nullable for future-proofing.
+        /// </summary>
+        public CardModel? selectedCard;
+    }
+}
