@@ -13,7 +13,7 @@ public static class DredgeCmd
 {
     private static LocString DredgeSelectionPrompt => new("card_selection", "MARINER-TO_DREDGE");
 
-    public static async Task<CardModel?> Dredge(PlayerChoiceContext choiceContext, Player player, int amount = 1)
+    public static async Task<CardModel?> Dredge(PlayerChoiceContext choiceContext, Player player, int amount)
     {
         if (CombatManager.Instance.IsOverOrEnding)
             return null;

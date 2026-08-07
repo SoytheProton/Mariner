@@ -11,7 +11,7 @@ namespace Mariner.MarinerCode.Commands;
 
 public static class SubmergeCmd
 {
-    public static async Task Submerge(PlayerChoiceContext choiceContext, Player player, int amount = 1)
+    public static async Task Submerge(PlayerChoiceContext choiceContext, Player player, int amount)
     {
         var cards = new List<CardModel>(amount);
         var drawPile = PileType.Draw.GetPile(player);
