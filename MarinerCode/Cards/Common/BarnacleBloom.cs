@@ -1,12 +1,6 @@
-﻿using Mariner.MarinerCode.Cards;
-using Mariner.MarinerCode.Cards.Variables;
-using Mariner.MarinerCode.Commands;
-using Mariner.MarinerCode.Extensions;
-using Mariner.MarinerCode.Monsters;
+﻿using Mariner.MarinerCode.Commands;
 using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -23,10 +17,11 @@ public class BarnacleBloom() : MarinerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        AttackCommand attackCommand = await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
-        if (attackCommand.Results.SelectMany(r => r).Any((Func<DamageResult, bool>) (r => r.WasTargetKilled)))
+        var attackCommand = await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+        if (attackCommand.Results.SelectMany(r => r).Any(r => r.WasTargetKilled))
         {
-            for(int i = 0; i < DynamicVars.Repeat._baseValue; i++) BarnacleCmd.Spawn(choiceContext, Owner, this);
+            for(var i = 0; i < DynamicVars.Repeat._baseValue; i++)
+                await BarnacleCmd.Spawn(choiceContext, Owner, this);
         }
     }
 

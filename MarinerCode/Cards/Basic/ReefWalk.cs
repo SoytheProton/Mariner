@@ -3,12 +3,9 @@ using Mariner.MarinerCode.Cards.Variables;
 using Mariner.MarinerCode.Character;
 using Mariner.MarinerCode.Commands;
 using Mariner.MarinerCode.Extensions;
-using Mariner.MarinerCode.Interfaces;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 

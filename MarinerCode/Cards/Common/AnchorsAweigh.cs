@@ -1,5 +1,4 @@
-﻿using Mariner.MarinerCode.Cards;
-using Mariner.MarinerCode.Cards.Variables;
+﻿using Mariner.MarinerCode.Cards.Variables;
 using Mariner.MarinerCode.Commands;
 using Mariner.MarinerCode.Extensions;
 using MegaCrit.Sts2.Core.Commands;
