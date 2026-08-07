@@ -20,10 +20,10 @@
   "MARINER-PETRICHOR.description": "",
   "MARINER-PETRICHOR.title": "Petrichor",
   
-  "MARINER-WASHED_AWAY.description": "",
+  "MARINER-WASHED_AWAY.description": "Deal {Damage:diff()} damage. When [gold]Sunken[/gold], deal {Damage2:diff()} damage to ALL enemies.",
   "MARINER-WASHED_AWAY.title": "Washed Away",
 
-  "MARINER-REEF_WALK.description": "",
+  "MARINER-REEF_WALK.description": "Gain {Block:diff()} Block. [gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-REEF_WALK.title": "Reef Walk",
   
   "MARINER-STRIKE_MARINER.description": "",
