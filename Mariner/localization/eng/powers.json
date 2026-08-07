@@ -1,5 +1,9 @@
 {
   "MARINER-ENRICHMENT_POWER.description": "When this creature dies, draw a card.",
   "MARINER-ENRICHMENT_POWER.smartDescription": "When this creature dies, the [gold]{Owner.StringValue}[/gold] draws [blue]{Amount}[/blue] {Amount:plural:card|cards}.",
-  "MARINER-ENRICHMENT_POWER.title": "Enrichment"
+  "MARINER-ENRICHMENT_POWER.title": "Enrichment",
+
+  "MARINER-PETRICHOR_POWER.description": "",
+  "MARINER-PETRICHOR_POWER.smartDescription": "",
+  "MARINER-PETRICHOR_POWER.title": "Petrichor"
 }

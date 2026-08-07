@@ -15,5 +15,20 @@
   "MARINER-CARD5.title": "Trawl Demo",
 
   "MARINER-CARD6.description": "",
-  "MARINER-CARD6.title": "Dredge Demo"
+  "MARINER-CARD6.title": "Dredge Demo",
+  
+  "MARINER-PETRICHOR.description": "",
+  "MARINER-PETRICHOR.title": "Petrichor",
+  
+  "MARINER-WASHED_AWAY.description": "",
+  "MARINER-WASHED_AWAY.title": "Washed Away",
+
+  "MARINER-REEF_WALK.description": "",
+  "MARINER-REEF_WALK.title": "Reef Walk",
+  
+  "MARINER-STRIKE_MARINER.description": "",
+  "MARINER-STRIKE_MARINER.title": "Strike",
+
+  "MARINER-DEFEND_MARINER.description": "",
+  "MARINER-DEFEND_MARINER.title": "Defend"
 }
