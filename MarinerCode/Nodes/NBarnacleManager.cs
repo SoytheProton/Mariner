@@ -16,7 +16,7 @@ namespace Mariner.MarinerCode.Nodes;
 public partial class NBarnacleManager : Control
 {
     public static SpireField<NCreature, NBarnacleManager> NBarnacleManagerField = new (_ => null);
-    private readonly List<NCreature> _barnacles = [];
+    public readonly List<NCreature> Barnacles = [];
 
     private NCreature? _creatureNode;
 
@@ -77,7 +77,7 @@ public partial class NBarnacleManager : Control
 
     private void TweenLayout()
     {
-        var capacity = _barnacles.Count;
+        var capacity = Barnacles.Count;
         if (capacity == 0)
             return;
         _curTween?.Kill();
@@ -85,7 +85,7 @@ public partial class NBarnacleManager : Control
         for (var index = 0; index < capacity; ++index)
         {
             var position = GetPosition(index);
-            _curTween.TweenProperty(_barnacles[index], "global_position", _creatureNode.GlobalPosition + position, TweenFadeDuration).SetEase(Tween.EaseType.InOut)
+            _curTween.TweenProperty(Barnacles[index], "global_position", _creatureNode.GlobalPosition + position, TweenFadeDuration).SetEase(Tween.EaseType.InOut)
                 .SetTrans(Tween.TransitionType.Sine);
         }
     }
@@ -94,7 +94,7 @@ public partial class NBarnacleManager : Control
     {
         if(node == null)
             return;
-        _barnacles.Add(node);
+        Barnacles.Add(node);
         // node.GlobalPosition = _creatureNode?.GlobalPosition ?? Vector2.Zero;
         node.Position = _creatureNode?.Position ?? Vector2.Zero;
         TweenLayout();
@@ -102,9 +102,9 @@ public partial class NBarnacleManager : Control
     
     public void RemoveBarnacle(NCreature node)
     {
-        if(node == null || !_barnacles.Contains(node))
+        if(node == null || !Barnacles.Contains(node))
             return;
-        _barnacles.Remove(node);
+        Barnacles.Remove(node);
         if (node.HasFocus())
             _creatureNode?.Hitbox.TryGrabFocus();
         TweenLayout();
@@ -123,16 +123,16 @@ public partial class NBarnacleManager : Control
     public void Clear()
     {
         _curTween?.Kill();
-        if (_barnacles.Count == 0)
+        if (Barnacles.Count == 0)
             return;
         _curTween = CreateTween();
-        foreach (var barn in _barnacles)
+        foreach (var barn in Barnacles)
         {
             _curTween.Parallel().TweenProperty(barn, (NodePath) "global_position", _creatureNode.GlobalPosition +  Vector2.Zero, 1.0).SetEase(Tween.EaseType.InOut).SetTrans(Tween.TransitionType.Sine);
             _curTween.Parallel().TweenProperty(barn, (NodePath) "modulate:a", 0, 0.25);
         }
-        foreach (var barn in _barnacles)
+        foreach (var barn in Barnacles)
             _curTween.Chain().TweenCallback(Callable.From(barn.QueueFreeSafely));
-        _barnacles.Clear();
+        Barnacles.Clear();
     }
 }

@@ -1,14 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqw7khrqrhj3o"]
+[gd_scene load_steps=4 format=3 uid="uid://cnfxg8q3nuksm"]
 
-[ext_resource type="Texture2D" uid="uid://b2sgcqcsxfaey" path="res://Mariner/images/monsters/barnacle1.png" id="1_ixf8o"]
+[ext_resource type="Script" uid="uid://cghtlla3sw0po" path="res://src/Core/Nodes/Combat/NCreatureVisuals.cs" id="1_8omkf"]
+[ext_resource type="Texture2D" uid="uid://ds5dieh23snw4" path="res://Mariner/images/monsters/barnacle1.png" id="1_57b26"]
+
+[sub_resource type="SpineSkeletonDataResource" id="SpineSkeletonDataResource_8omkf"]
 
 [node name="Barnacle" type="Node2D"]
-position = Vector2(2, 0)
+script = ExtResource("1_8omkf")
+
+[node name="Visuals" type="SpineSprite" parent="."]
+skeleton_data_res = SubResource("SpineSkeletonDataResource_8omkf")
+position = Vector2(0, -21)
+scale = Vector2(0.25, 0.25)
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -212.0
-offset_top = -300.0
-offset_right = 204.0
-offset_bottom = -3.0
-texture = ExtResource("1_ixf8o")
+offset_left = -183.0
+offset_top = -301.0
+offset_right = 190.0
+offset_bottom = -4.0
+texture = ExtResource("1_57b26")
 expand_mode = 1
+stretch_mode = 5

@@ -5,7 +5,9 @@ using Mariner.MarinerCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 
 namespace Mariner.MarinerCode.Commands;
@@ -22,9 +24,12 @@ public static class BarnacleCmd
         var combatState = summoner.Creature.CombatState;
         var barnacle = (Barnacle) ModelDb.Monster<Barnacle>().ToMutable();
         barnacle.PlayerOwner = summoner;
+        var playerNode = NCombatRoom.Instance?.GetCreatureNode(summoner.Creature);
+        if(!CheckIfPossibleAndShowThoughtBubbleIfNot(playerNode))
+            return;
+        
         var creature = await CreatureCmd.Add(barnacle, combatState);
         var node = NCombatRoom.Instance?.GetCreatureNode(creature);
-        var playerNode = NCombatRoom.Instance?.GetCreatureNode(summoner.Creature);
         if(playerNode != null)
             NBarnacleManager.NBarnacleManagerField.Get(playerNode)?.AddBarnacle(node);
         if (node != null && source is CardModel)
@@ -36,5 +41,14 @@ public static class BarnacleCmd
         var power = (EnrichmentPower) ModelDb.Power<EnrichmentPower>().ToMutable();
         power.PlayerOwner = summoner;
         await PowerCmd.Apply(choiceContext, power, creature, 1M, null, null);
+    }
+    
+    private static bool CheckIfPossibleAndShowThoughtBubbleIfNot(NCreature playerNode)
+    {
+        var manager = NBarnacleManager.NBarnacleManagerField.Get(playerNode);
+        if (manager.Barnacles.Count < BarnacleCap)
+            return true;
+        ThinkCmd.Play(new LocString("combat_messages", "MARINER-BARNACLE_FULL"), playerNode.Entity, 2.0);
+        return false;
     }
 }
