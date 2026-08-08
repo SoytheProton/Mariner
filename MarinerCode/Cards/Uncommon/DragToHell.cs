@@ -3,6 +3,7 @@ using Mariner.MarinerCode.Cards;
 using Mariner.MarinerCode.Cards.Variables;
 using Mariner.MarinerCode.Character;
 using Mariner.MarinerCode.Commands;
+using Mariner.MarinerCode.Extensions;
 using Mariner.MarinerCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -25,7 +26,7 @@ public class DragToHell() : MarinerCard(3,
         CardPlay play)
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.PowerUpAnimDelay);
-        await SubmergeCmd.Submerge(choiceContext, Owner);
+        await SubmergeCmd.Submerge(choiceContext, Owner, DynamicVars.Submerge().IntValue);
     }
 
     protected override void OnUpgrade() => EnergyCost.UpgradeBy(-1);

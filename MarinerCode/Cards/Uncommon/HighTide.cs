@@ -25,7 +25,7 @@ public class HighTide() : MarinerCard(1,
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.PowerUpAnimDelay);
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
-        await DredgeCmd.Dredge(choiceContext, Owner);
+        await DredgeCmd.Dredge(choiceContext, Owner, DynamicVars.Dredge().IntValue);
     }
 
     protected override void OnUpgrade()

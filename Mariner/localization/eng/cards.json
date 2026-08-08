@@ -1,22 +1,4 @@
 {
-  "MARINER-CARD1.description": "",
-  "MARINER-CARD1.title": "Ballast Demo",
-
-  "MARINER-CARD2.description": "",
-  "MARINER-CARD2.title": "Sunken Demo",
-
-  "MARINER-CARD3.description": "",
-  "MARINER-CARD3.title": "Abyssal Demo",
-
-  "MARINER-CARD4.description": "",
-  "MARINER-CARD4.title": "Submerge Demo",
-
-  "MARINER-CARD5.description": "",
-  "MARINER-CARD5.title": "Trawl Demo",
-
-  "MARINER-CARD6.description": "",
-  "MARINER-CARD6.title": "Dredge Demo",
-  
   "MARINER-PETRICHOR.description": "",
   "MARINER-PETRICHOR.title": "Petrichor",
   
@@ -39,7 +21,6 @@
   "MARINER-DEEPEST_DEPTHS.description": "",
   "MARINER-DEEPEST_DEPTHS.title": "Deepest Depths",
 
-
   "MARINER-DRAG_TO_HELL.description": "[gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-DRAG_TO_HELL.title": "Drag to Hell",
 
@@ -47,5 +28,38 @@
   "MARINER-HIGH_TIDE.title": "High Tide",
 
   "MARINER-LEAD_BOOTS.description": "",
-  "MARINER-LEAD_BOOTS.title": "Lead Boots"
+  "MARINER-LEAD_BOOTS.title": "Lead Boots",
+
+  "MARINER-ANCHORS_AWEIGH.description": "",
+  "MARINER-ANCHORS_AWEIGH.title": "Anchors Aweigh",
+
+  "MARINER-WINDWARD_STRIKE.description": "",
+  "MARINER-WINDWARD_STRIKE.title": "Windward Strike",
+
+  "MARINER-ANCHOR_SHOT.description": "",
+  "MARINER-ANCHOR_SHOT.title": "Anchor Shot",
+
+  "MARINER-BARNACLE_BLOOM.description": "",
+  "MARINER-BARNACLE_BLOOM.title": "Barnacle Bloom",
+  
+  "MARINER-GEYSER.description": "",
+  "MARINER-GEYSER.title": "Geyser",
+
+  "MARINER-REVERBERATION.description": "",
+  "MARINER-REVERBERATION.title": "Reverberation",
+
+  "MARINER-RIPPLE_STRIKE.description": "",
+  "MARINER-RIPPLE_STRIKE.title": "Ripple Strike",
+
+  "MARINER-SEAFLOOR_STRIKE.description": "",
+  "MARINER-SEAFLOOR_STRIKE.title": "Seafloor Strike",
+
+  "MARINER-THERMAL_STRIKE.description": "",
+  "MARINER-THERMAL_STRIKE.title": "Thermal Strike",
+
+  "MARINER-BARNACLES.description": "",
+  "MARINER-BARNACLES.title": "Barnacles",
+
+  "MARINER-BAROMETER.description": "",
+  "MARINER-BAROMETER.title": "Barometer"
 }

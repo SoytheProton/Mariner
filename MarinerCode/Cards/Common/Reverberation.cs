@@ -9,23 +9,23 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Cards.Common;
 
-public class AnchorsAweigh() : MarinerCard(1,
+public class Reverberation() : MarinerCard(2,
     CardType.Attack, CardRarity.Common,
-    TargetType.AnyEnemy)
+    TargetType.AllEnemies)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(9M, ValueProp.Move), new SubmergeVar(3)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(10M, ValueProp.Move), new RepeatVar(2)];
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [MarinerCardKeywords.Ballast];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
-        await SubmergeCmd.Submerge(choiceContext, Owner, DynamicVars.Submerge().IntValue);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).WithHitCount((int)DynamicVars.Repeat._baseValue).FromCard(this, play).TargetingAllOpponents(CombatState).WithHitFx("vfx/vfx_giant_horizontal_slash").Execute(choiceContext);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3M);
-        DynamicVars.Submerge().UpgradeValueBy(2M);
+        DynamicVars.Damage.UpgradeValueBy(4M);
     }
 }
