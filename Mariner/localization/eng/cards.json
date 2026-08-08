@@ -61,5 +61,32 @@
   "MARINER-BARNACLES.title": "Barnacles",
 
   "MARINER-BAROMETER.description": "",
-  "MARINER-BAROMETER.title": "Barometer"
+  "MARINER-BAROMETER.title": "Barometer",
+
+  "MARINER-BREATHLESS.description": "",
+  "MARINER-BREATHLESS.title": "Breathless",
+
+  "MARINER-BRINE_BARRIER.description": "",
+  "MARINER-BRINE_BARRIER.title": "BrineBarrier",
+
+  "MARINER-DYING_REEF.description": "",
+  "MARINER-DYING_REEF.title": "DyingReef",
+
+  "MARINER-FATHOM.description": "",
+  "MARINER-FATHOM.title": "Fathom",
+
+  "MARINER-RESURFACE.description": "",
+  "MARINER-RESURFACE.title": "Resurface",
+
+  "MARINER-SEXTANT.description": "",
+  "MARINER-SEXTANT.title": "Sextant",
+
+  "MARINER-SHELF_BREAK.description": "",
+  "MARINER-SHELF_BREAK.title": "ShelfBreak",
+
+  "MARINER-TWILIGHT.description": "",
+  "MARINER-TWILIGHT.title": "Twilight",
+
+  "MARINER-WAVEBREAKER.description": "",
+  "MARINER-WAVEBREAKER.title": "Wavebreaker"
 }
