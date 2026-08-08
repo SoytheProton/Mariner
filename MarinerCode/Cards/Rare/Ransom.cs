@@ -14,7 +14,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace Mariner.MarinerCode.Cards.Rare;
 
 [Pool(typeof(MarinerCardPool))]
-public class Ransom() : MarinerCard(0,
+public class Ransom() : MarinerCard(5,
     CardType.Skill, CardRarity.Rare,
     TargetType.Self), ISunkenCard
 {

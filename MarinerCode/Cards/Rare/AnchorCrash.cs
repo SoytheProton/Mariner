@@ -14,7 +14,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace Mariner.MarinerCode.Cards.Rare;
 
 [Pool(typeof(MarinerCardPool))]
-public class AnchorCrash() : MarinerCard(0,
+public class AnchorCrash() : MarinerCard(3,
     CardType.Skill, CardRarity.Rare,
     TargetType.Self), ISunkenCard
 {
