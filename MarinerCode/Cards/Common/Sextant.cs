@@ -1,4 +1,5 @@
 ﻿using Mariner.MarinerCode.Powers;
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -10,17 +11,23 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Cards.Common;
 
-public class Barometer() : MarinerCard(1,
+public class Sextant() : MarinerCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(5M, ValueProp.Move), new PowerVar<WeakPower>(1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(5M, ValueProp.Move)];
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
+        CardSelectorPrefs prefs = new CardSelectorPrefs(SelectionScreenPrompt, 1);
+        CardModel card = (await CardSelectCmd.FromCombatPile(choiceContext, PileType.Discard.GetPile(Owner), Owner, prefs)).FirstOrDefault();
+        if (card == null)
+            return;
+        await CardPileCmd.Add(card, PileType.Hand);
     }
     
     public override async Task AfterCardDrawn(
@@ -30,11 +37,12 @@ public class Barometer() : MarinerCard(1,
     {
         if (card != this)
             return;
-        await PowerCmd.Apply<WeakPower>(choiceContext, (IEnumerable<Creature>) CombatState?.HittableEnemies, DynamicVars.Weak.BaseValue, Owner.Creature, this);
+        await CreatureCmd.Damage(choiceContext, Owner.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies), DynamicVars.Damage, this, null);
     }
     
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(3M);
+        DynamicVars.Damage.UpgradeValueBy(3M);
+        RemoveKeyword(CardKeyword.Exhaust);
     }
 }
