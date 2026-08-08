@@ -16,7 +16,7 @@ public class MarinerHook
         foreach (var model in Hook.IterateCombatHookListeners(combatState))
         {
             if(model is not ISubmergeHook submergeModel)
-                return;
+                continue;
             choiceContext.PushModel(model);
             await submergeModel.AfterCardSubmerged(choiceContext, card);
             model.InvokeExecutionFinished();
@@ -32,7 +32,7 @@ public class MarinerHook
         foreach (var model in Hook.IterateCombatHookListeners(combatState))
         {
             if(model is not IAbyssalHook abyssalModel)
-                return;
+                continue;
             choiceContext.PushModel(model);
             await abyssalModel.BeforeCardShuffled(choiceContext, card);
             model.InvokeExecutionFinished();
@@ -47,12 +47,80 @@ public class MarinerHook
     {
         foreach (var model in Hook.IterateCombatHookListeners(combatState))
         {
-            if(model is not IAbyssalHook abyssalModel)
-                return;
+            if(model is not ISunkenHook sunkenHook)
+                continue;
             choiceContext.PushModel(model);
-            await abyssalModel.BeforeCardShuffled(choiceContext, card);
+            await sunkenHook.AfterCardSunken(choiceContext, card);
             model.InvokeExecutionFinished();
             choiceContext.PopModel(model);
+        }
+    }
+    
+    public static int ModifyAbyssalAmount(
+        ICombatState combatState,
+        CardModel card,
+        int playCount,
+        out List<IModifyAbyssalHook> modifyingModels)
+    {
+        modifyingModels = [];
+        var playCount1 = playCount;
+        foreach (var combatHookListener in Hook.IterateCombatHookListeners(combatState))
+        {
+            if(combatHookListener is not IModifyAbyssalHook sunkenHook)
+                continue;
+            var num = playCount1;
+            playCount1 = sunkenHook.ModifyAbyssalAmount(card, playCount1);
+            if (playCount1 != num)
+                modifyingModels.Add(sunkenHook);
+        }
+        return playCount1;
+    }
+    
+    public static async Task AfterModifyingAbyssalAmount(
+        ICombatState combatState,
+        CardModel card,
+        List<IModifyAbyssalHook> modifyingModels)
+    {
+        foreach (var combatHookListener in Hook.IterateCombatHookListeners(combatState))
+        {
+            if (combatHookListener is not IModifyAbyssalHook modifier || !modifyingModels.Contains(modifier))
+                continue;
+            await modifier.AfterModifyingAbyssalAmount(card);
+            combatHookListener.InvokeExecutionFinished();
+        }
+    }
+    
+    public static int ModifySunkenAmount(
+        ICombatState combatState,
+        CardModel card,
+        int playCount,
+        out List<IModifySunkenHook> modifyingModels)
+    {
+        modifyingModels = [];
+        var playCount1 = playCount;
+        foreach (var combatHookListener in Hook.IterateCombatHookListeners(combatState))
+        {
+            if(combatHookListener is not IModifySunkenHook sunkenHook)
+                continue;
+            var num = playCount1;
+            playCount1 = sunkenHook.ModifySunkenAmount(card, playCount1);
+            if (playCount1 != num)
+                modifyingModels.Add(sunkenHook);
+        }
+        return playCount1;
+    }
+    
+    public static async Task AfterModifyingSunkenAmount(
+        ICombatState combatState,
+        CardModel card,
+        List<IModifySunkenHook> modifyingModels)
+    {
+        foreach (var combatHookListener in Hook.IterateCombatHookListeners(combatState))
+        {
+            if (combatHookListener is not IModifySunkenHook modifier || !modifyingModels.Contains(modifier))
+                continue;
+            await modifier.AfterModifyingSunkenAmount(card);
+            combatHookListener.InvokeExecutionFinished();
         }
     }
 }

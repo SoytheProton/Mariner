@@ -108,7 +108,15 @@ public class AbyssalBallastPatches
         }
 
         await CardPileCmd.Add(card, PileType.Play);
-        await abyssalCard.BeforeShuffled(choiceContext);
+        
+        if(card.CombatState == null) 
+            return;
+        var playCount = await card.GeneratePlayCount(card.CombatState, null);
+        playCount = MarinerHook.ModifyAbyssalAmount(card.CombatState, card, playCount, out var list);
+        await MarinerHook.AfterModifyingAbyssalAmount(card.CombatState, card, list);
+        for (var i = 0; i < playCount; ++i)
+            await abyssalCard.BeforeShuffled(choiceContext);
+        
         if (LocalContext.IsMe(card.Owner))
             await Cmd.CustomScaledWait(0.1f, 0.2f);
         await abyssalCard.BeforeShuffled(choiceContext);

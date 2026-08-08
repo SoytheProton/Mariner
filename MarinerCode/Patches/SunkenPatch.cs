@@ -83,9 +83,18 @@ public class SunkenPatch
             return;
         }
         await CardPileCmd.Add(card, PileType.Play);
+        
+        if(card.CombatState == null) 
+            return;
+        var playCount = await card.GeneratePlayCount(card.CombatState, null);
+        playCount = MarinerHook.ModifySunkenAmount(card.CombatState, card, playCount, out var list);
+        await MarinerHook.AfterModifyingSunkenAmount(card.CombatState, card, list);
+        for (var i = 0; i < playCount; ++i)
+            await sunkenCard.OnSunken(choiceContext);
+        
         if (LocalContext.IsMe(card.Owner))
             await Cmd.CustomScaledWait(0.3f, 0.6f);
-        await sunkenCard.OnSunken(choiceContext);
+        
         if (card.Keywords.Contains(CardKeyword.Ethereal))
         {
             await CardCmd.Exhaust(choiceContext, card, true);
