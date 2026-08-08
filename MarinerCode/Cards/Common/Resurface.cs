@@ -27,7 +27,6 @@ public class Resurface() : MarinerCard(1,
     
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(3M);
-        DynamicVars["Block2"].UpgradeValueBy(1M);
+        DynamicVars.Submerge().UpgradeValueBy(2M);
     }
 }
