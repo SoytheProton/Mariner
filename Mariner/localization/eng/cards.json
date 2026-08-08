@@ -96,7 +96,7 @@
   "MARINER-AQUATIC_TOPAZ.description": "At the start of each combat, put this card into your [gold]Discard Pile[/gold].\nGain {Energy:energyIcons()}.\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
   "MARINER-AQUATIC_TOPAZ.title": "Aquatic Topaz",
 
-  "MARINER-BLEEDING_REEF.description": "Deal {Damage:diff()} damage.\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].\nWhen [gold]Abyssal[/gold], gain 1 [gold]Block[/gold] for every card in your [gold]Discard Pile[/gold]",
+  "MARINER-BLEEDING_REEF.description": "Deal {Damage:diff()} damage.\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].\nWhen [gold]Abyssal[/gold], gain 1 [gold]Block[/gold] for every card in your [gold]Discard Pile[/gold].",
   "MARINER-BLEEDING_REEF.title": "Bleeding Reef",
 
   "MARINER-CATCH_AND_RELEASE.description": "[gold]Submerge[/gold] {Submerge:diff()}.\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
@@ -119,20 +119,54 @@
 
   "MARINER-RIP_CURRENT.description": "Whenever you draw a card with an effect when drawn, draw {Cards:diff()} {Cards:plural:card|cards}.",
   "MARINER-RIP_CURRENT.title": "Rip Current",
+  
+  "MARINER-KELP_WALL.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhenever you are attacked this turn, spawn 1 [gold]Barnacle[/gold].",
+  "MARINER-KELP_WALL.title": "Kelp Wall",
 
+  "MARINER-MOONPOOL.description": "When Abyssal, gain 1 Energy (and draw 1 card).",
+  "MARINER-MOONPOOL.title": "Moonpool",
 
+  "MARINER-MARITIME.description": "Deal {Damage:diff()} damage.\nApply {WeakPower:diff()} [gold]Weak[/gold].",
+  "MARINER-MARITIME.title": "Maritime",
+
+  "MARINER-NEMOS_MAP.description": "at end of turn gain 1 block for every enemy in combat",
+  "MARINER-NEMOS_MAP.title": "NemosMap",
+
+  "MARINER-SHIMMERING_RAIN.description": "Shuffle this card into the draw pile.\nWhen drawn, gain {Block:diff()} [gold]Block[/gold].",
+  "MARINER-SHIMMERING_RAIN.title": "Shimmering Rain",
+
+  "MARINER-SONAR.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen [gold]Sunken[/gold], [gold]Submerge[/gold] {Submerge:diff()}.",
+  "MARINER-SONAR.title": "Sonar",
+
+  "MARINER-TIDE_POOL.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen [gold]Sunken[/gold], gain {Block2:diff()} [gold]Block[/gold].\nWhen [gold]Abyssal[/gold], gain {Block2:diff()} [gold]Block[/gold].",
+  "MARINER-TIDE_POOL.title": "Tide Pool",
+
+  "MARINER-TRANQUIL_WATERS.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold] to ALL enemies.",
+  "MARINER-TRANQUIL_WATERS.title": "Tranquil Waters",
+  
+
+  
   "MARINER-RARE": "Rare Cards",
   
   
-  "MARINER-PETRICHOR.description": "",
+  "MARINER-PETRICHOR.description": "draw 1 and shuffle 1 back start of turn.",
   "MARINER-PETRICHOR.title": "Petrichor",
 
   "MARINER-TEN_THOUSAND_LEAGUES.description": "[gold]Submerge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.",
   "MARINER-TEN_THOUSAND_LEAGUES.title": "Ten Thousand Leagues",
 
   "MARINER-DEEPEST_DEPTHS.selectionScreenPrompt": "Select a card to duplicate.",
-  "MARINER-DEEPEST_DEPTHS.description": "",
+  "MARINER-DEEPEST_DEPTHS.description": "choose a card to duplicate every turn with ballast",
   "MARINER-DEEPEST_DEPTHS.title": "Deepest Depths",
+
+  "MARINER-THALASSOPHOBIA.description": "Gain 1(2) Energy. Submerge 6(8). Draw 1 card.",
+  "MARINER-THALASSOPHOBIA.title": "Thalassophobia",
+
+  "MARINER-RANSOM.description": "Deal {Damage:diff()} damage. When Sunken, add this back and it costs 1 less for combat",
+  "MARINER-RANSOM.title": "Ransom",
+  
+  "MARINER-ANCHOR_CRASH.description": "Deal {Damage:diff()} damage. [gold]Submerge[/gold] {Submerge:diff()}. When Sunken, [gold]Submerge[/gold] {Submerge:diff()}.",
+  "MARINER-ANCHOR_CRASH.title": "Anchor Crash",
 
   
   

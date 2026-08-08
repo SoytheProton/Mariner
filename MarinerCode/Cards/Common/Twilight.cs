@@ -12,7 +12,7 @@ public sealed class Twilight() : MarinerCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.AnyEnemy), ISubmergeHook
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<WeakPower>(2)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<WeakPower>(1)];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [MarinerCardKeywords.Trawl];
 
