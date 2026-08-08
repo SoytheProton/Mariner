@@ -48,7 +48,7 @@
   "MARINER-REVERBERATION.description": "Deal {Damage:diff()} damage to ALL enemies twice.",
   "MARINER-REVERBERATION.title": "Reverberation",
 
-  "MARINER-RIPPLE_STRIKE.description": "Deal {Damage:diff()} damage twice.\nWhen [gold]Abyssal[/gold], apply {Vulnerable:diff()} [gold]Vulnerable[/gold] to ALL enemies.",
+  "MARINER-RIPPLE_STRIKE.description": "Deal {Damage:diff()} damage twice.\nWhen [gold]Abyssal[/gold], apply {VulnerablePower:diff()} [gold]Vulnerable[/gold] to ALL enemies.",
   "MARINER-RIPPLE_STRIKE.title": "Ripple Strike",
 
   "MARINER-SEAFLOOR_STRIKE.description": "Deal {Damage:diff()} damage.\n[gold]Dredge[/gold] {Dredge:diff()}.",
@@ -60,7 +60,7 @@
   "MARINER-BARNACLES.description": "Gain {Block:diff()} [gold]Block[/gold].\nAt the start of your next 2 turns, spawn 1 [gold]Barnacle[/gold].",
   "MARINER-BARNACLES.title": "Barnacles",
 
-  "MARINER-BAROMETER.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen drawn, apply {Weak:diff()} [gold]Weak[/gold] to ALL enemies.",
+  "MARINER-BAROMETER.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen drawn, apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
   "MARINER-BAROMETER.title": "Barometer",
 
   "MARINER-BREATHLESS.description": "[gold]Submerge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Dredge:diff()}.",
@@ -84,7 +84,7 @@
   "MARINER-SHELF_BREAK.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-SHELF_BREAK.title": "Shelf Break",
 
-  "MARINER-TWILIGHT.description": "Apply {Weak:diff()} [gold]Weak[/gold].\nWhen [gold]Submerged[/gold], costs 0 this turn.",
+  "MARINER-TWILIGHT.description": "Apply {WeakPower:diff()} [gold]Weak[/gold].\nWhen [gold]Submerged[/gold], costs 0 this turn.",
   "MARINER-TWILIGHT.title": "Twilight",
 
   "MARINER-WAVEBREAKER.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen [gold]Sunken[/gold], deal {Damage:diff()} damage to the highest HP enemy.",
