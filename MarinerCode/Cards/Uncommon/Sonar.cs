@@ -16,7 +16,7 @@ namespace Mariner.MarinerCode.Cards.Uncommon;
 
 [Pool(typeof(MarinerCardPool))]
 public sealed class Sonar() : MarinerCard(1,
-    CardType.Attack, CardRarity.Uncommon,
+    CardType.Skill, CardRarity.Uncommon,
     TargetType.Self), ISunkenCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(12M, ValueProp.Move), new SubmergeVar(3)];

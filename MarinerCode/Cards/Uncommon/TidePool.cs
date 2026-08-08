@@ -13,7 +13,7 @@ namespace Mariner.MarinerCode.Cards.Uncommon;
 
 [Pool(typeof(MarinerCardPool))]
 public sealed class TidePool() : MarinerCard(2,
-    CardType.Attack, CardRarity.Uncommon,
+    CardType.Skill, CardRarity.Uncommon,
     TargetType.Self), ISunkenCard, IAbyssalCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(11M, ValueProp.Move), new BlockVar("Block2",11M, ValueProp.Move)];

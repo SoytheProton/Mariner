@@ -13,7 +13,7 @@ namespace Mariner.MarinerCode.Cards.Uncommon;
 
 [Pool(typeof(MarinerCardPool))]
 public sealed class TranquilWaters() : MarinerCard(1,
-    CardType.Attack, CardRarity.Uncommon,
+    CardType.Skill, CardRarity.Uncommon,
     TargetType.AllEnemies)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(10M, ValueProp.Move), new PowerVar<VulnerablePower>(2)];

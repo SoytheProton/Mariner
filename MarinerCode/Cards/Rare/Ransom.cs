@@ -4,6 +4,7 @@ using Mariner.MarinerCode.Character;
 using Mariner.MarinerCode.Commands;
 using Mariner.MarinerCode.Extensions;
 using Mariner.MarinerCode.Interfaces;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -15,8 +16,8 @@ namespace Mariner.MarinerCode.Cards.Rare;
 
 [Pool(typeof(MarinerCardPool))]
 public class Ransom() : MarinerCard(5,
-    CardType.Skill, CardRarity.Rare,
-    TargetType.Self), ISunkenCard
+    CardType.Attack, CardRarity.Rare,
+    TargetType.AnyEnemy), ISunkenCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(45M, ValueProp.Move)];
 
@@ -29,11 +30,15 @@ public class Ransom() : MarinerCard(5,
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
     }
     
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    public override async Task BeforeHandDraw(
+        Player player,
+        PlayerChoiceContext choiceContext,
+        ICombatState combatState)
     {
         if (player != Owner || !hasSunken)
             return;
-        await CardPileCmd.Add(this, PileType.Hand);
+        if(Pile.Type != PileType.Hand)
+            await CardPileCmd.Add(this, PileType.Hand);
         EnergyCost.AddThisCombat(-1);
         hasSunken = false;
     }

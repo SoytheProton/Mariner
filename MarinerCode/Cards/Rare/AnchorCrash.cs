@@ -15,8 +15,8 @@ namespace Mariner.MarinerCode.Cards.Rare;
 
 [Pool(typeof(MarinerCardPool))]
 public class AnchorCrash() : MarinerCard(3,
-    CardType.Skill, CardRarity.Rare,
-    TargetType.Self), ISunkenCard
+    CardType.Attack, CardRarity.Rare,
+    TargetType.AnyEnemy), ISunkenCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(28M, ValueProp.Move), new SubmergeVar(6)];
     

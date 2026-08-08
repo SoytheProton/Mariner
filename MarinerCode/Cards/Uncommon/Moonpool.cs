@@ -13,7 +13,7 @@ namespace Mariner.MarinerCode.Cards.Uncommon;
 
 [Pool(typeof(MarinerCardPool))]
 public sealed class Moonpool() : MarinerCard(-1,
-    CardType.Attack, CardRarity.Uncommon,
+    CardType.Skill, CardRarity.Uncommon,
     TargetType.None), IAbyssalCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [];

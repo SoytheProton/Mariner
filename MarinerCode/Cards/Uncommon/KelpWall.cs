@@ -13,7 +13,7 @@ namespace Mariner.MarinerCode.Cards.Uncommon;
 
 [Pool(typeof(MarinerCardPool))]
 public sealed class KelpWall() : MarinerCard(2,
-    CardType.Attack, CardRarity.Uncommon,
+    CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(12M, ValueProp.Move), new PowerVar<KelpWallPower>(1M)];
