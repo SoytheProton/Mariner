@@ -119,7 +119,6 @@ public class AbyssalBallastPatches
         
         if (LocalContext.IsMe(card.Owner))
             await Cmd.CustomScaledWait(0.1f, 0.2f);
-        await abyssalCard.BeforeShuffled(choiceContext);
         await CardPileCmd.Add(card, card.Keywords.Contains(MarinerCardKeywords.Ballast) ? PileType.Discard.GetPile(card.Owner) : PileType.Draw.GetPile(card.Owner));
     }
 }

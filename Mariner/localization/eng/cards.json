@@ -88,5 +88,8 @@
   "MARINER-TWILIGHT.title": "Twilight",
 
   "MARINER-WAVEBREAKER.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen [gold]Sunken[/gold], deal {Damage:diff()} damage to the highest HP enemy.",
-  "MARINER-WAVEBREAKER.title": "Wavebreaker"
+  "MARINER-WAVEBREAKER.title": "Wavebreaker",
+
+  "MARINER-BARNACLE_SUMMONER.description": "Summon!!!",
+  "MARINER-BARNACLE_SUMMONER.title": "Barnacle Summoner"
 }
