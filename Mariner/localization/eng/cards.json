@@ -30,63 +30,63 @@
   "MARINER-LEAD_BOOTS.description": "",
   "MARINER-LEAD_BOOTS.title": "Lead Boots",
 
-  "MARINER-ANCHORS_AWEIGH.description": "",
+  "MARINER-ANCHORS_AWEIGH.description": "Deal {Damage:diff()} damage.\n[gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-ANCHORS_AWEIGH.title": "Anchors Aweigh",
 
-  "MARINER-WINDWARD_STRIKE.description": "",
+  "MARINER-WINDWARD_STRIKE.description": "Deal {Damage:diff()} damage.\nWhen [gold]Sunken[/gold], next turn, draw 1 card.",
   "MARINER-WINDWARD_STRIKE.title": "Windward Strike",
 
-  "MARINER-ANCHOR_SHOT.description": "",
+  "MARINER-ANCHOR_SHOT.description": "Deal {Damage:diff()} damage.",
   "MARINER-ANCHOR_SHOT.title": "Anchor Shot",
 
-  "MARINER-BARNACLE_BLOOM.description": "",
+  "MARINER-BARNACLE_BLOOM.description": "Deal {Damage:diff()} damage.\nIf [gold]Lethal[/gold], spawn 2 [gold]Barnacles[/gold].",
   "MARINER-BARNACLE_BLOOM.title": "Barnacle Bloom",
   
-  "MARINER-GEYSER.description": "",
+  "MARINER-GEYSER.description": "Deal {Damage:diff()} damage.\nWhen drawn, [gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-GEYSER.title": "Geyser",
 
-  "MARINER-REVERBERATION.description": "",
+  "MARINER-REVERBERATION.description": "Deal {Damage:diff()} damage to ALL enemies twice.",
   "MARINER-REVERBERATION.title": "Reverberation",
 
-  "MARINER-RIPPLE_STRIKE.description": "",
+  "MARINER-RIPPLE_STRIKE.description": "Deal {Damage:diff()} damage twice.\nWhen [gold]Abyssal[/gold], apply {Vulnerable:diff()} [gold]Vulnerable[/gold] to ALL enemies.",
   "MARINER-RIPPLE_STRIKE.title": "Ripple Strike",
 
-  "MARINER-SEAFLOOR_STRIKE.description": "",
+  "MARINER-SEAFLOOR_STRIKE.description": "Deal {Damage:diff()} damage.\n[gold]Dredge[/gold] {Dredge:diff()}.",
   "MARINER-SEAFLOOR_STRIKE.title": "Seafloor Strike",
 
-  "MARINER-THERMAL_STRIKE.description": "",
+  "MARINER-THERMAL_STRIKE.description": "Deal {Damage:diff()} damage.\nWhen [gold]Abyssal[/gold], deal {Damage2:diff()} damage to ALL enemies.",
   "MARINER-THERMAL_STRIKE.title": "Thermal Strike",
 
-  "MARINER-BARNACLES.description": "",
+  "MARINER-BARNACLES.description": "Gain {Block:diff()} [gold]Block[/gold].\nAt the start of your next 2 turns, spawn 1 [gold]Barnacle[/gold].",
   "MARINER-BARNACLES.title": "Barnacles",
 
-  "MARINER-BAROMETER.description": "",
+  "MARINER-BAROMETER.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen drawn, apply {Weak:diff()} [gold]Weak[/gold] to ALL enemies.",
   "MARINER-BAROMETER.title": "Barometer",
 
-  "MARINER-BREATHLESS.description": "",
+  "MARINER-BREATHLESS.description": "[gold]Submerge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Dredge:diff()}.",
   "MARINER-BREATHLESS.title": "Breathless",
 
-  "MARINER-BRINE_BARRIER.description": "",
-  "MARINER-BRINE_BARRIER.title": "BrineBarrier",
+  "MARINER-BRINE_BARRIER.description": "Gain {Block:diff()} [gold]Block[/gold].",
+  "MARINER-BRINE_BARRIER.title": "Brine Barrier",
 
-  "MARINER-DYING_REEF.description": "",
-  "MARINER-DYING_REEF.title": "DyingReef",
+  "MARINER-DYING_REEF.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen [gold]Abyssal[/gold], spawn 1 [gold]Barnacle[/gold].",
+  "MARINER-DYING_REEF.title": "Dying Reef",
 
-  "MARINER-FATHOM.description": "",
+  "MARINER-FATHOM.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen [gold]Sunken[/gold], gain {Block2:diff()} [gold]Block[/gold] next turn.",
   "MARINER-FATHOM.title": "Fathom",
 
-  "MARINER-RESURFACE.description": "",
+  "MARINER-RESURFACE.description": "[gold]Submerge[/gold] {Submerge:diff()}.\nDraw {Cards:diff()} cards.",
   "MARINER-RESURFACE.title": "Resurface",
 
-  "MARINER-SEXTANT.description": "",
+  "MARINER-SEXTANT.description": "Add 1 card from your discard pile to your hand.\nWhen drawn, deal {Damage:diff()} damage to a random enemy.",
   "MARINER-SEXTANT.title": "Sextant",
 
-  "MARINER-SHELF_BREAK.description": "",
-  "MARINER-SHELF_BREAK.title": "ShelfBreak",
+  "MARINER-SHELF_BREAK.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Submerge[/gold] {Submerge:diff()}.",
+  "MARINER-SHELF_BREAK.title": "Shelf Break",
 
-  "MARINER-TWILIGHT.description": "",
+  "MARINER-TWILIGHT.description": "Apply {Weak:diff()} [gold]Weak[/gold].\nWhen [gold]Submerged[/gold], costs 0 this turn.",
   "MARINER-TWILIGHT.title": "Twilight",
 
-  "MARINER-WAVEBREAKER.description": "",
+  "MARINER-WAVEBREAKER.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen [gold]Sunken[/gold], deal {Damage:diff()} damage to the highest HP enemy.",
   "MARINER-WAVEBREAKER.title": "Wavebreaker"
 }
