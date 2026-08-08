@@ -18,7 +18,7 @@ public class AnchorCrash() : MarinerCard(0,
     CardType.Skill, CardRarity.Rare,
     TargetType.Self), ISunkenCard
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(45M, ValueProp.Move), new SubmergeVar(6)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(28M, ValueProp.Move), new SubmergeVar(6)];
     
     
     protected override async Task OnPlay(
@@ -36,7 +36,7 @@ public class AnchorCrash() : MarinerCard(0,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(10M);
+        DynamicVars.Damage.UpgradeValueBy(8M);
         DynamicVars.Submerge().UpgradeValueBy(3M);
     }
 }
