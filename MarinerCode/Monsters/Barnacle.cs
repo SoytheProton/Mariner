@@ -25,6 +25,9 @@ public class Barnacle : CustomMonsterModel
         }
     }
     
+    
+    protected override string VisualsPath => "res://Mariner/scenes/barnacles/barnacle.tscn";
+    
     public override async Task AfterAddedToRoom()
     {
         await PowerCmd.Apply<MinionPower>(new ThrowingPlayerChoiceContext(), Creature, 1M, Creature, null);
