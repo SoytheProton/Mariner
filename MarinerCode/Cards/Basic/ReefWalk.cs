@@ -12,7 +12,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace Mariner.MarinerCode.Cards.Basic;
 
 [Pool(typeof(MarinerCardPool))]
-public class ReefWalk() : MarinerCard(1, CardType.Skill,
+public sealed class ReefWalk() : MarinerCard(1, CardType.Skill,
     CardRarity.Basic, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(8M, ValueProp.Move), new SubmergeVar(2M)];
@@ -22,7 +22,7 @@ public class ReefWalk() : MarinerCard(1, CardType.Skill,
         CardPlay play)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
-        await SubmergeCmd.Submerge(choiceContext, Owner, DynamicVars.Submerge().IntValue);
+        await SubmergeCmd.Submerge(choiceContext, DynamicVars.Submerge().BaseValue, Owner);
     }
     
     protected override void OnUpgrade()

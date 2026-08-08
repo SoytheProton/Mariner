@@ -11,7 +11,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace Mariner.MarinerCode.Cards.Basic;
 
 [Pool(typeof(MarinerCardPool))]
-public class WashedAway() : MarinerCard(2, CardType.Attack,
+public sealed class WashedAway() : MarinerCard(2, CardType.Attack,
     CardRarity.Basic, TargetType.AnyEnemy), ISunkenCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(16M, ValueProp.Move), new DamageVar("Damage2", 6M, ValueProp.Move)];

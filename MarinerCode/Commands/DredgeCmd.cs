@@ -13,7 +13,7 @@ public static class DredgeCmd
 {
     private static LocString DredgeSelectionPrompt => new("card_selection", "MARINER-TO_DREDGE");
 
-    public static async Task<CardModel?> Dredge(PlayerChoiceContext choiceContext, Player player, int amount)
+    public static async Task<CardModel?> Dredge(PlayerChoiceContext choiceContext, decimal amount, Player player)
     {
         if (CombatManager.Instance.IsOverOrEnding)
             return null;
@@ -22,7 +22,7 @@ public static class DredgeCmd
         if(discardPile.IsEmpty)
             return null;
 
-        var cards = discardPile.Cards.TakeLast(amount).ToList();
+        var cards = discardPile.Cards.TakeLast((int) amount).ToList();
 
         var cardToAdd = (await CardSelectCmd.FromSimpleGrid(choiceContext, cards, player, new CardSelectorPrefs(DredgeSelectionPrompt, 1))).FirstOrDefault();
 

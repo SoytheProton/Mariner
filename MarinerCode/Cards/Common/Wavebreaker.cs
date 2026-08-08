@@ -1,14 +1,13 @@
 ﻿using Mariner.MarinerCode.Interfaces;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Cards.Common;
 
-public class Wavebreaker() : MarinerCard(1,
+public sealed class Wavebreaker() : MarinerCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self), ISunkenCard
 {
@@ -23,8 +22,11 @@ public class Wavebreaker() : MarinerCard(1,
     
     public async Task OnSunken(PlayerChoiceContext choiceContext)
     {
-        var highHp = CombatState.HittableEnemies.Where(c => c.CurrentHp == CombatState.HittableEnemies.Max(c => c.CurrentHp));
-        await CreatureCmd.Damage(choiceContext, Owner.RunState.Rng.CombatTargets.NextItem(highHp), DynamicVars.Damage, this, null);
+        var hp = CombatState.HittableEnemies.Max(c => c.CurrentHp);
+        var highHp = Owner.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies.Where(c => c.CurrentHp == hp));
+        if(highHp == null)
+            return;
+        await CreatureCmd.Damage(choiceContext, highHp, DynamicVars.Damage, this, null);
     }
     
     protected override void OnUpgrade()

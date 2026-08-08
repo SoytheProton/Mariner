@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Cards.Common;
 
-public class ShelfBreak() : MarinerCard(2,
+public sealed class ShelfBreak() : MarinerCard(2,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
@@ -20,7 +20,7 @@ public class ShelfBreak() : MarinerCard(2,
         CardPlay play)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
-        await SubmergeCmd.Submerge(choiceContext, Owner, DynamicVars.Submerge().IntValue);
+        await SubmergeCmd.Submerge(choiceContext, DynamicVars.Submerge().BaseValue, Owner);
     }
     
     protected override void OnUpgrade()

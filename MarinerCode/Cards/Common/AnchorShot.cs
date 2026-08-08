@@ -6,7 +6,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Cards.Common;
 
-public class AnchorShot() : MarinerCard(0,
+public sealed class AnchorShot() : MarinerCard(0,
     CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {

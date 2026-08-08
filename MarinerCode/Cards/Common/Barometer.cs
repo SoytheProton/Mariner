@@ -1,7 +1,5 @@
-﻿using Mariner.MarinerCode.Powers;
-using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -10,7 +8,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Cards.Common;
 
-public class Barometer() : MarinerCard(1,
+public sealed class Barometer() : MarinerCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
@@ -30,7 +28,7 @@ public class Barometer() : MarinerCard(1,
     {
         if (card != this)
             return;
-        await PowerCmd.Apply<WeakPower>(choiceContext, (IEnumerable<Creature>) CombatState?.HittableEnemies, DynamicVars.Weak.BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<WeakPower>(choiceContext, CombatState?.HittableEnemies, DynamicVars.Weak.BaseValue, Owner.Creature, this);
     }
     
     protected override void OnUpgrade()

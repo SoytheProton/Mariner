@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.Runs;
 
 namespace Mariner.MarinerCode.Powers;
 
-public class EnrichmentPower : MarinerPower
+public sealed class EnrichmentPower : MarinerPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;

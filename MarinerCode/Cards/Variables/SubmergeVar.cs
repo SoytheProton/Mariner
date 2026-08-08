@@ -9,4 +9,9 @@ public class SubmergeVar : DynamicVar
     {
         this.WithTooltip();
     }
+    
+    public SubmergeVar(string name, decimal baseValue) : base(name, baseValue)
+    {
+        this.WithTooltip();
+    }
 }

@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace Mariner.MarinerCode.Cards.Basic;
 
 [Pool(typeof(MarinerCardPool))]
-public class DefendMariner() : MarinerCard(1, CardType.Skill,
+public sealed class DefendMariner() : MarinerCard(1, CardType.Skill,
     CardRarity.Basic, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(5M, ValueProp.Move)];

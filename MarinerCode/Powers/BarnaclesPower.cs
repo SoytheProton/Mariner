@@ -1,6 +1,5 @@
 ﻿using Mariner.MarinerCode.Cards;
 using Mariner.MarinerCode.Commands;
-using Mariner.MarinerCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -9,7 +8,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Mariner.MarinerCode.Powers;
 
-public class BarnaclesPower() : MarinerPower
+public sealed class BarnaclesPower : MarinerPower
 {
     public override PowerType Type =>
         PowerType.Buff;

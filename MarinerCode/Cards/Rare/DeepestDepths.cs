@@ -1,5 +1,4 @@
 ﻿using BaseLib.Utils;
-using Mariner.MarinerCode.Cards;
 using Mariner.MarinerCode.Character;
 using Mariner.MarinerCode.Powers;
 using MegaCrit.Sts2.Core.CardSelection;
@@ -8,7 +7,6 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
 
 namespace Mariner.MarinerCode.Cards.Rare;
 
@@ -25,22 +23,13 @@ public class DeepestDepths() : MarinerCard(3,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        DeepestDepths nightmare = this;
-        CardSelectorPrefs prefs = new CardSelectorPrefs(nightmare.SelectionScreenPrompt, 1);
-        IEnumerable<CardModel> cards = await CardSelectCmd.FromHand(choiceContext, nightmare.Owner, prefs, (Func<CardModel, bool>) null, (AbstractModel) nightmare);
-        await CreatureCmd.TriggerAnim(nightmare.Owner.Creature, "Cast", nightmare.Owner.Character.CastAnimDelay);
-        CardModel selectedCard = cards.FirstOrDefault<CardModel>();
+        var prefs = new CardSelectorPrefs(SelectionScreenPrompt, 1);
+        var cards = await CardSelectCmd.FromHand(choiceContext, Owner, prefs, null, this);
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
+        var selectedCard = cards.FirstOrDefault();
         if (selectedCard == null)
-        {
-            cards = (IEnumerable<CardModel>) null;
-            selectedCard = (CardModel) null;
-        }
-        else
-        {
-            (await PowerCmd.Apply<DeepestDepthsPower>(choiceContext, nightmare.Owner.Creature, 1M, nightmare.Owner.Creature, (CardModel) nightmare)).SetSelectedCard(selectedCard);
-            cards = (IEnumerable<CardModel>) null;
-            selectedCard = (CardModel) null;
-        }
+            return;
+        (await PowerCmd.Apply<DeepestDepthsPower>(choiceContext, Owner.Creature, 1M, Owner.Creature, this))?.SetSelectedCard(selectedCard);
     }
 
     protected override void OnUpgrade() => EnergyCost.UpgradeBy(-1);

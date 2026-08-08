@@ -1,7 +1,4 @@
-﻿using Mariner.MarinerCode.Cards.Variables;
-using Mariner.MarinerCode.Commands;
-using Mariner.MarinerCode.Extensions;
-using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -9,7 +6,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Cards.Common;
 
-public class Reverberation() : MarinerCard(2,
+public sealed class Reverberation() : MarinerCard(2,
     CardType.Attack, CardRarity.Common,
     TargetType.AllEnemies)
 {

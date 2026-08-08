@@ -1,6 +1,4 @@
 ﻿using Mariner.MarinerCode.Cards;
-using Mariner.MarinerCode.Powers;
-using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -13,7 +11,7 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace Mariner.MarinerCode.Powers;
 
-public class DeepestDepthsPower() : MarinerPower
+public sealed class DeepestDepthsPower : MarinerPower
 {
     public const string _cardKey = "Card";
 
@@ -34,30 +32,22 @@ public class DeepestDepthsPower() : MarinerPower
         PlayerChoiceContext choiceContext,
         ICombatState combatState)
     {
-        DeepestDepthsPower power = this;
-        CardModel card;
         if (player != Owner.Player)
-        {
-            card = null;
-        }
-        else
-        {
-            card = GetInternalData<Data>().selectedCard;
-            await CardPileCmd.AddGeneratedCardToCombat(card.CreateClone(), PileType.Hand, power.Owner.Player);
-            card = null;
-        }
+            return;
+        var card = GetInternalData<Data>().selectedCard;
+        await CardPileCmd.AddGeneratedCardToCombat(card.CreateClone(), PileType.Hand, Owner.Player);
     }
 
     public void SetSelectedCard(CardModel card)
     {
-        CardModel clone = card.CreateClone();
+        var clone = card.CreateClone();
         CardCmd.ClearAffliction(clone);
         CardCmd.ApplyKeyword(clone, MarinerCardKeywords.Ballast);
         GetInternalData<Data>().selectedCard = clone;
         ((StringVar) DynamicVars["Card"]).StringValue = clone.Title;
     }
 
-    public class Data
+    private class Data
     {
         /// <summary>
         /// This will be null for the moment after this power is applied but before this is set by Nightmare.OnPlay.

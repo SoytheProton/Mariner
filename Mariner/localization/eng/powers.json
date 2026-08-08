@@ -13,9 +13,17 @@
   
   "MARINER-LEAD_BOOTS_POWER.description": "",
   "MARINER-LEAD_BOOTS_POWER.smartDescription": "",
-  "MARINER-LEAD_BOOTS_POWER.title": "LeadBootsPower",
+  "MARINER-LEAD_BOOTS_POWER.title": "Lead Boots",
 
   "MARINER-BARNACLES_POWER.description": "",
   "MARINER-BARNACLES_POWER.smartDescription": "",
-  "MARINER-BARNACLES_POWER.title": "Barnacles!"
+  "MARINER-BARNACLES_POWER.title": "Barnacles!",
+
+  "MARINER-DROWNING_POWER.description": "",
+  "MARINER-DROWNING_POWER.smartDescription": "",
+  "MARINER-DROWNING_POWER.title": "Drowning",
+
+  "MARINER-RIP_CURRENT_POWER.description": "",
+  "MARINER-RIP_CURRENT_POWER.smartDescription": "",
+  "MARINER-RIP_CURRENT_POWER.title": "Rip Current"
 }

@@ -10,7 +10,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Cards.Common;
 
-public class Geyser() : MarinerCard(2,
+public sealed class Geyser() : MarinerCard(2,
     CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
@@ -30,7 +30,7 @@ public class Geyser() : MarinerCard(2,
     {
         if (card != this)
             return;
-        await SubmergeCmd.Submerge(choiceContext, Owner, DynamicVars.Submerge().IntValue);
+        await SubmergeCmd.Submerge(choiceContext, DynamicVars.Submerge().BaseValue, Owner);
     }
 
     protected override void OnUpgrade()

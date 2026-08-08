@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Cards.Common;
 
-public class AnchorsAweigh() : MarinerCard(1,
+public sealed class AnchorsAweigh() : MarinerCard(1,
     CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
@@ -20,7 +20,7 @@ public class AnchorsAweigh() : MarinerCard(1,
         CardPlay play)
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
-        await SubmergeCmd.Submerge(choiceContext, Owner, DynamicVars.Submerge().IntValue);
+        await SubmergeCmd.Submerge(choiceContext, DynamicVars.Submerge().BaseValue, Owner);
     }
 
     protected override void OnUpgrade()

@@ -1,19 +1,14 @@
-﻿using Mariner.MarinerCode.Cards.Variables;
-using Mariner.MarinerCode.Commands;
-using Mariner.MarinerCode.Extensions;
-using Mariner.MarinerCode.Interfaces;
-using MegaCrit.Sts2.Core.Combat;
+﻿using Mariner.MarinerCode.Interfaces;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
-using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Cards.Common;
 
-public class Twilight() : MarinerCard(1,
+public sealed class Twilight() : MarinerCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.AnyEnemy), ISubmergeHook
 {

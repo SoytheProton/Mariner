@@ -1,39 +1,25 @@
 {
-  "MARINER-PETRICHOR.description": "",
-  "MARINER-PETRICHOR.title": "Petrichor",
+  "MARINER-STRIKE_MARINER.description": "Deal {Damage:diff()} damage.",
+  "MARINER-STRIKE_MARINER.title": "Strike",
+
+  "MARINER-DEFEND_MARINER.description": "Gain {Block:diff()} [gold]Block[/gold].",
+  "MARINER-DEFEND_MARINER.title": "Defend",
   
   "MARINER-WASHED_AWAY.description": "Deal {Damage:diff()} damage.\nWhen [gold]Sunken[/gold], deal {Damage2:diff()} damage to ALL enemies.",
   "MARINER-WASHED_AWAY.title": "Washed Away",
 
   "MARINER-REEF_WALK.description": "Gain {Block:diff()} Block.\n[gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-REEF_WALK.title": "Reef Walk",
+
+
+
+  "MARINER-COMMON": "Common Cards",
   
-  "MARINER-STRIKE_MARINER.description": "Deal {Damage:diff()} damage.",
-  "MARINER-STRIKE_MARINER.title": "Strike",
-
-  "MARINER-DEFEND_MARINER.description": "Gain {Block:diff()} [gold]Block[/gold].",
-  "MARINER-DEFEND_MARINER.title": "Defend",
-
-  "MARINER-TEN_THOUSAND_LEAGUES.description": "[gold]Submerge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.",
-  "MARINER-TEN_THOUSAND_LEAGUES.title": "Ten Thousand Leagues",
-
-  "MARINER-DEEPEST_DEPTHS.selectionScreenPrompt": "Select a card to duplicate.",
-  "MARINER-DEEPEST_DEPTHS.description": "",
-  "MARINER-DEEPEST_DEPTHS.title": "Deepest Depths",
-
-  "MARINER-DRAG_TO_HELL.description": "[gold]Submerge[/gold] {Submerge:diff()}.",
-  "MARINER-DRAG_TO_HELL.title": "Drag to Hell",
-
-  "MARINER-HIGH_TIDE.description": "",
-  "MARINER-HIGH_TIDE.title": "High Tide",
-
-  "MARINER-LEAD_BOOTS.description": "",
-  "MARINER-LEAD_BOOTS.title": "Lead Boots",
 
   "MARINER-ANCHORS_AWEIGH.description": "Deal {Damage:diff()} damage.\n[gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-ANCHORS_AWEIGH.title": "Anchors Aweigh!",
 
-  "MARINER-WINDWARD_STRIKE.description": "Deal {Damage:diff()} damage.\nWhen [gold]Sunken[/gold], next turn, draw 1 card.",
+  "MARINER-WINDWARD_STRIKE.description": "Deal {Damage:diff()} damage.\nWhen [gold]Sunken[/gold], draw a card next turn.",
   "MARINER-WINDWARD_STRIKE.title": "Windward Strike",
 
   "MARINER-ANCHOR_SHOT.description": "Deal {Damage:diff()} damage.",
@@ -89,6 +75,69 @@
 
   "MARINER-WAVEBREAKER.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen [gold]Sunken[/gold], deal {Damage:diff()} damage to the highest HP enemy.",
   "MARINER-WAVEBREAKER.title": "Wavebreaker",
+
+  
+  
+  "MARINER-UNCOMMON": "Uncommon Cards",
+  
+  
+  "MARINER-DRAG_TO_HELL.description": "[gold]Submerge[/gold] {Submerge:diff()}.",
+  "MARINER-DRAG_TO_HELL.title": "Drag to Hell",
+
+  "MARINER-HIGH_TIDE.description": "Draw {Cards:diff()} {Cards:plural:card|cards}.\n[gold]Dredge[/gold] {Dredge:diff()}.",
+  "MARINER-HIGH_TIDE.title": "High Tide",
+
+  "MARINER-LEAD_BOOTS.description": "At the start of your turn, [gold]Submerge[/gold] {Submerge:diff()}.",
+  "MARINER-LEAD_BOOTS.title": "Lead Boots",
+
+  "MARINER-ANCHOR_SLAM.description": "Deal {Damage:diff()} damage.\nWhen [gold]Abyssal[/gold], [gold]Submerge[/gold] {Submerge:diff()}.",
+  "MARINER-ANCHOR_SLAM.title": "Anchor Slam",
+
+  "MARINER-AQUATIC_TOPAZ.description": "At the start of each combat, put this card into your [gold]Discard Pile[/gold].\nGain {Energy:energyIcons()}.\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
+  "MARINER-AQUATIC_TOPAZ.title": "Aquatic Topaz",
+
+  "MARINER-BLEEDING_REEF.description": "Deal {Damage:diff()} damage.\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].\nWhen [gold]Abyssal[/gold], gain 1 [gold]Block[/gold] for every card in your [gold]Discard Pile[/gold]",
+  "MARINER-BLEEDING_REEF.title": "Bleeding Reef",
+
+  "MARINER-CATCH_AND_RELEASE.description": "[gold]Submerge[/gold] {Submerge:diff()}.\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
+  "MARINER-CATCH_AND_RELEASE.title": "Catch and Release",
+
+  "MARINER-DOUBLOONS.description": "Gain {Energy2:energyIcons()}.\nWhen [gold]Sunken[/gold], gain {Energy:energyIcons()} next turn.",
+  "MARINER-DOUBLOONS.title": "Doubloons",
+
+  "MARINER-DROWNING.description": "Sunken effects trigger an additional time.",
+  "MARINER-DROWNING.title": "Drowning",
+
+  "MARINER-GLIMMERING_REEF.description": "Draw {Cards2:diff()} {Cards2:plural:card|cards}.\n[gold]Submerge[/gold] {Submerge:diff()}.\nWhen [gold]Abyssal[/gold], draw {Cards:diff()} {Cards:plural:card|cards}.",
+  "MARINER-GLIMMERING_REEF.title": "Glimmering Reef",
+  
+  "MARINER-HALYARD_WHIP.description": "Deal {Damage:diff()} damage.\nAdd [gold]Trawl[/gold] to the top {Cards:diff()} {Cards:plural:card|cards} of your [gold]Draw Pile[/gold].",
+  "MARINER-HALYARD_WHIP.title": "Halyard Whip",
+
+  "MARINER-HOIST.description": "[gold]Dredge[/gold] {Dredge1:diff()}.\n[gold]Dredge[/gold] {Dredge2:diff()}.\n[gold]Dredge[/gold] {Dredge3:diff()}.",
+  "MARINER-HOIST.title": "Hoist",
+
+  "MARINER-RIP_CURRENT.description": "Whenever you draw a card with an effect when drawn, draw {Cards:diff()} {Cards:plural:card|cards}.",
+  "MARINER-RIP_CURRENT.title": "Rip Current",
+
+
+  "MARINER-RARE": "Rare Cards",
+  
+  
+  "MARINER-PETRICHOR.description": "",
+  "MARINER-PETRICHOR.title": "Petrichor",
+
+  "MARINER-TEN_THOUSAND_LEAGUES.description": "[gold]Submerge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.",
+  "MARINER-TEN_THOUSAND_LEAGUES.title": "Ten Thousand Leagues",
+
+  "MARINER-DEEPEST_DEPTHS.selectionScreenPrompt": "Select a card to duplicate.",
+  "MARINER-DEEPEST_DEPTHS.description": "",
+  "MARINER-DEEPEST_DEPTHS.title": "Deepest Depths",
+
+  
+  
+  "MARINER-MISC": "Misc Cards",
+  
 
   "MARINER-BARNACLE_SUMMONER.description": "Summon!!!",
   "MARINER-BARNACLE_SUMMONER.title": "Barnacle Summoner"

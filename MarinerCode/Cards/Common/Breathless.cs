@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace Mariner.MarinerCode.Cards.Common;
 
-public class Breathless() : MarinerCard(2,
+public sealed class Breathless() : MarinerCard(2,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
@@ -17,8 +17,8 @@ public class Breathless() : MarinerCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await SubmergeCmd.Submerge(choiceContext, Owner, DynamicVars.Submerge().IntValue);
-        await DredgeCmd.Dredge(choiceContext, Owner, DynamicVars.Dredge().IntValue);
+        await SubmergeCmd.Submerge(choiceContext, DynamicVars.Submerge().BaseValue, Owner);
+        await DredgeCmd.Dredge(choiceContext, DynamicVars.Dredge().BaseValue, Owner);
     }
     
     protected override void OnUpgrade()

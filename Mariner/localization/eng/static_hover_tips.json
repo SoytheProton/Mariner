@@ -5,7 +5,7 @@
   "MARINER-SUBMERGE.description": "Discard the top cards from the [gold]Draw Pile[/gold].",
   "MARINER-SUBMERGE.smartDescription": "Discard the top {Submerge:plural:card|[blue]{Submerge:diff()}[/blue] cards} from the [gold]Draw Pile[/gold].",
   "MARINER-SUBMERGE.title": "Submerge",
-  "MARINER-ABYSSAL.description": "Trigger this effect when this card is shuffled while in the [gold]Discard Pile[/gold].",
+  "MARINER-ABYSSAL.description": "Trigger this effect when shuffling while this card is in the [gold]Discard Pile[/gold].",
   "MARINER-ABYSSAL.title": "Abyssal",
   "MARINER-SUNKEN.description": "Trigger this effect when this card is in your [gold]Hand[/gold] at the end of your turn.",
   "MARINER-SUNKEN.title": "Sunken",

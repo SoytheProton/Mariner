@@ -1,5 +1,5 @@
-﻿using Mariner.MarinerCode.Commands;
-using Mariner.MarinerCode.Relics;
+﻿using Mariner.MarinerCode.Cards;
+using Mariner.MarinerCode.Commands;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Relics;
@@ -8,11 +8,13 @@ using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Mariner.MarinerCode.Relics;
 
-public class EncrustedSpyglass() : MarinerRelic
+public sealed class EncrustedSpyglass : MarinerRelic
 {
     public override RelicRarity Rarity =>
         RelicRarity.Starter;
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Barnacle)];
+    
     public override async Task BeforeSideTurnStart(
         PlayerChoiceContext choiceContext,
         CombatSide side,

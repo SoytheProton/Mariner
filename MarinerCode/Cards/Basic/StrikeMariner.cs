@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace Mariner.MarinerCode.Cards.Basic;
 
 [Pool(typeof(MarinerCardPool))]
-public class StrikeMariner() : MarinerCard(1, CardType.Attack,
+public sealed class StrikeMariner() : MarinerCard(1, CardType.Attack,
     CardRarity.Basic, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6M, ValueProp.Move)];
