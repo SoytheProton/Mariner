@@ -28,7 +28,7 @@ public class MarinerCardPool : CustomCardPoolModel
     }*/
 
     //Color of small card icons
-    public override Color DeckEntryCardColor => new("ffffff");
+    public override Color DeckEntryCardColor => new("008080");
 
     public override bool IsColorless => false;
 }

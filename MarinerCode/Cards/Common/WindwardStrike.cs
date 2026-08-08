@@ -15,7 +15,7 @@ namespace Mariner.MarinerCode.Cards.Common;
 
 public class WindwardStrike() : MarinerCard(1,
     CardType.Attack, CardRarity.Common,
-    TargetType.AnyEnemy)
+    TargetType.AnyEnemy), ISunkenCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(7M, ValueProp.Move), new CardsVar(1)];
     
@@ -28,13 +28,8 @@ public class WindwardStrike() : MarinerCard(1,
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
     }
     
-    public override async Task AfterCardDrawn(
-        PlayerChoiceContext choiceContext,
-        CardModel card,
-        bool fromHandDraw)
+    public async Task OnSunken(PlayerChoiceContext choiceContext)
     {
-        if (card != this)
-            return;
         await PowerCmd.Apply<DrawCardsNextTurnPower>(choiceContext, Owner.Creature, DynamicVars.Cards.BaseValue, Owner.Creature, this);
     }
 
