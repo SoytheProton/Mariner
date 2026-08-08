@@ -22,7 +22,7 @@ public class ReefWalk() : MarinerCard(1, CardType.Skill,
         CardPlay play)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
-        await SubmergeCmd.Submerge(choiceContext, Owner);
+        await SubmergeCmd.Submerge(choiceContext, Owner, DynamicVars.Submerge().IntValue);
     }
     
     protected override void OnUpgrade()
