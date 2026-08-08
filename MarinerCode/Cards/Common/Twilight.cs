@@ -15,7 +15,7 @@ namespace Mariner.MarinerCode.Cards.Common;
 
 public class Twilight() : MarinerCard(1,
     CardType.Skill, CardRarity.Common,
-    TargetType.Self), ISubmergeHook
+    TargetType.AnyEnemy), ISubmergeHook
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<WeakPower>(2)];
     

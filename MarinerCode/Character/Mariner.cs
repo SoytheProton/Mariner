@@ -3,6 +3,7 @@ using BaseLib.Utils.NodeFactories;
 using Mariner.MarinerCode.Extensions;
 using Godot;
 using Mariner.MarinerCode.Cards.Basic;
+using Mariner.MarinerCode.Relics;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
@@ -14,7 +15,7 @@ public class Mariner : PlaceholderCharacterModel
 {
     public const string CharacterId = "Mariner";
 
-    public static readonly Color Color = new("ffffff");
+    public static readonly Color Color = new("008080");
 
     public override Color NameColor => Color;
     public override CharacterGender Gender => CharacterGender.Neutral;
@@ -36,7 +37,7 @@ public class Mariner : PlaceholderCharacterModel
 
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [
-        ModelDb.Relic<BurningBlood>()
+        ModelDb.Relic<EncrustedSpyglass>()
     ];
 
     public override CardPoolModel CardPool => ModelDb.CardPool<MarinerCardPool>();
