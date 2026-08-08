@@ -31,7 +31,7 @@
   "MARINER-LEAD_BOOTS.title": "Lead Boots",
 
   "MARINER-ANCHORS_AWEIGH.description": "Deal {Damage:diff()} damage.\n[gold]Submerge[/gold] {Submerge:diff()}.",
-  "MARINER-ANCHORS_AWEIGH.title": "Anchors Aweigh",
+  "MARINER-ANCHORS_AWEIGH.title": "Anchors Aweigh!",
 
   "MARINER-WINDWARD_STRIKE.description": "Deal {Damage:diff()} damage.\nWhen [gold]Sunken[/gold], next turn, draw 1 card.",
   "MARINER-WINDWARD_STRIKE.title": "Windward Strike",
@@ -58,7 +58,7 @@
   "MARINER-THERMAL_STRIKE.title": "Thermal Strike",
 
   "MARINER-BARNACLES.description": "Gain {Block:diff()} [gold]Block[/gold].\nAt the start of your next 2 turns, spawn 1 [gold]Barnacle[/gold].",
-  "MARINER-BARNACLES.title": "Barnacles",
+  "MARINER-BARNACLES.title": "Barnacles!",
 
   "MARINER-BAROMETER.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen drawn, apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
   "MARINER-BAROMETER.title": "Barometer",
