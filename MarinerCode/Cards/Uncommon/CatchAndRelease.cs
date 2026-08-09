@@ -7,6 +7,7 @@ using Mariner.MarinerCode.Interfaces;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 
@@ -18,7 +19,7 @@ public sealed class CatchAndRelease() : MarinerCard(1,
     TargetType.Self), ISunkenCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new SubmergeVar(5), new CardsVar(2), new CardsVar("Cards2", 1)];
-    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Sunken)];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
@@ -33,6 +34,6 @@ public sealed class CatchAndRelease() : MarinerCard(1,
         await PowerCmd.Apply<DrawCardsNextTurnPower>(choiceContext, Owner.Creature, DynamicVars["Cards2"].BaseValue, Owner.Creature, this);
     }
 
-    protected override void OnUpgrade() => DynamicVars.Cards.UpgradeValueBy(1M);
+    protected override void OnUpgrade() => DynamicVars["Cards2"].UpgradeValueBy(1M);
 
 }

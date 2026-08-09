@@ -1,12 +1,11 @@
 ﻿using BaseLib.Utils;
 using Mariner.MarinerCode.Character;
 using Mariner.MarinerCode.Interfaces;
-using Mariner.MarinerCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Cards.Uncommon;
@@ -16,8 +15,8 @@ public sealed class TidePool() : MarinerCard(2,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self), ISunkenCard, IAbyssalCard
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(11M, ValueProp.Move), new BlockVar("Block2",11M, ValueProp.Move)];
-    
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(11M, ValueProp.Move), new BlockVar("Block2",3M, ValueProp.Move)];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Sunken), HoverTipFactory.Static(MarinerStaticHovertip.Abyssal)];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
@@ -38,6 +37,6 @@ public sealed class TidePool() : MarinerCard(2,
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(4M);
-        DynamicVars["Block2"].UpgradeValueBy(2M);
+        DynamicVars["Block2"].UpgradeValueBy(1M);
     }
 }

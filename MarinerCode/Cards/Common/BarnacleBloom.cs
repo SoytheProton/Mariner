@@ -14,7 +14,7 @@ public sealed class BarnacleBloom() : MarinerCard(1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(9M, ValueProp.Move), new RepeatVar(2)];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Barnacle)];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Lethal), HoverTipFactory.Static(MarinerStaticHovertip.Barnacle)];
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

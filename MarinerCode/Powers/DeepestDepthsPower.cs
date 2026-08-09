@@ -13,8 +13,6 @@ namespace Mariner.MarinerCode.Powers;
 
 public sealed class DeepestDepthsPower : MarinerPower
 {
-    public const string _cardKey = "Card";
-
     public override PowerType Type => PowerType.Buff;
 
     public override PowerInstanceType InstanceType => PowerInstanceType.Instanced;

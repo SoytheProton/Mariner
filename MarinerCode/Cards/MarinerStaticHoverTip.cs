@@ -11,4 +11,10 @@ public static class MarinerStaticHovertip
     public static StaticHoverTip Sunken;
     [CustomEnum]
     public static StaticHoverTip Barnacle;
+    [CustomEnum]
+    public static StaticHoverTip Submerge;
+    [CustomEnum]
+    public static StaticHoverTip Dredge;
+    [CustomEnum]
+    public static StaticHoverTip Lethal;
 }

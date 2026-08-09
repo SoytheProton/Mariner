@@ -1,13 +1,10 @@
 ﻿using BaseLib.Utils;
 using Mariner.MarinerCode.Character;
-using Mariner.MarinerCode.Interfaces;
-using Mariner.MarinerCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Cards.Uncommon;
@@ -31,12 +28,11 @@ public sealed class ShimmeringRain() : MarinerCard(1,
     
     protected override CardLocation GetResultLocationForCardPlay()
     {
-        CardLocation locationForCardPlay = base.GetResultLocationForCardPlay();
-        if (locationForCardPlay.pileType == PileType.Discard)
-        {
-            locationForCardPlay.pileType = PileType.Draw;  
-            locationForCardPlay.position = CardPilePosition.Random;
-        }
+        var locationForCardPlay = base.GetResultLocationForCardPlay();
+        if (locationForCardPlay.pileType != PileType.Discard) 
+            return locationForCardPlay;
+        locationForCardPlay.pileType = PileType.Draw;  
+        locationForCardPlay.position = CardPilePosition.Random;
         return locationForCardPlay;
     }
 

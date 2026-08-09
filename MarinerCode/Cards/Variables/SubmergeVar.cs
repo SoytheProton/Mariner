@@ -7,11 +7,11 @@ public class SubmergeVar : DynamicVar
 {
     public SubmergeVar(decimal baseValue) : base("Submerge", baseValue)
     {
-        this.WithTooltip();
+        this.WithTooltip("MARINER-SUBMERGE_DYNAMIC");
     }
     
     public SubmergeVar(string name, decimal baseValue) : base(name, baseValue)
     {
-        this.WithTooltip();
+        this.WithTooltip("MARINER-SUBMERGE");
     }
 }

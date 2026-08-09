@@ -17,8 +17,7 @@ public sealed class LeadBoots() : MarinerCard(1,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new SubmergeVar(2)];
-    
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromKeyword(MarinerCardKeywords.Ballast)];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Submerge)];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

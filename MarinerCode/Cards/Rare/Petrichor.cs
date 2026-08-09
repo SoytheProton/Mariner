@@ -1,5 +1,4 @@
 ﻿using BaseLib.Utils;
-using Mariner.MarinerCode.Cards;
 using Mariner.MarinerCode.Character;
 using Mariner.MarinerCode.Powers;
 using MegaCrit.Sts2.Core.Commands;

@@ -4,12 +4,11 @@ using Mariner.MarinerCode.Character;
 using Mariner.MarinerCode.Commands;
 using Mariner.MarinerCode.Extensions;
 using Mariner.MarinerCode.Interfaces;
-using Mariner.MarinerCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Cards.Uncommon;
@@ -20,7 +19,7 @@ public sealed class Sonar() : MarinerCard(1,
     TargetType.Self), ISunkenCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(12M, ValueProp.Move), new SubmergeVar(3)];
-    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Sunken)];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)

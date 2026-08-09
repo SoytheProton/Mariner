@@ -3,7 +3,7 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace Mariner.MarinerCode.Interfaces;
 
-public interface ISubmergeHook
+public interface IAfterSubmergeHook
 {
     public Task AfterCardSubmerged(PlayerChoiceContext choiceContext, CardModel card);
 }

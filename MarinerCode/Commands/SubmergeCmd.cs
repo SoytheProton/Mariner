@@ -51,5 +51,6 @@ public static class SubmergeCmd
             await MarinerHook.AfterCardSubmerged(combatState, choiceContext, card);
         }
         discardPile.InvokeContentsChanged();
+        await Cmd.CustomScaledWait(0.2f, 0.4f);
     }
 }

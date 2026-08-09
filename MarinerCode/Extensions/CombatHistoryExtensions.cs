@@ -11,4 +11,9 @@ public static class CombatHistoryExtensions
     {
         history.Add(combatState, new CardSubmergedEntry(card, combatState.RoundNumber, combatState.CurrentSide, history, combatState.Players));
     }
+    
+    public static void CardSunken(this CombatHistory history, ICombatState combatState, CardModel card, int playAmount)
+    {
+        history.Add(combatState, new CardSunkenEntry(card, playAmount, combatState.RoundNumber, combatState.CurrentSide, history, combatState.Players));
+    }
 }

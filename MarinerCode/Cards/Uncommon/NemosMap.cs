@@ -1,12 +1,10 @@
-﻿using BaseLib.Utils;
-using Mariner.MarinerCode.Cards.Variables;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using Mariner.MarinerCode.Character;
-using Mariner.MarinerCode.Extensions;
 using Mariner.MarinerCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace Mariner.MarinerCode.Cards.Uncommon;
@@ -24,7 +22,7 @@ public sealed class NemosMap() : MarinerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<NemosMapPower>(choiceContext, Owner.Creature, DynamicVars["NemosMapPower"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<NemosMapPower>(choiceContext, Owner.Creature, DynamicVars.Power<NemosMapPower>().BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade() => RemoveKeyword(MarinerCardKeywords.Ballast);

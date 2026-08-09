@@ -7,6 +7,7 @@ using Mariner.MarinerCode.Interfaces;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace Mariner.MarinerCode.Cards.Uncommon;
@@ -17,7 +18,7 @@ public sealed class GlimmeringReef() : MarinerCard(1,
     TargetType.Self), IAbyssalCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1), new SubmergeVar(2M), new CardsVar("Cards2", 2)];
-    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Abyssal)];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)

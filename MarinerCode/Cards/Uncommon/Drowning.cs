@@ -4,6 +4,7 @@ using Mariner.MarinerCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace Mariner.MarinerCode.Cards.Uncommon;
@@ -14,7 +15,7 @@ public sealed class Drowning() : MarinerCard(2,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new RepeatVar(1)];
-
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Sunken)];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)

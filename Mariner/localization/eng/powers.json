@@ -1,8 +1,10 @@
 {
   "MARINER-ENRICHMENT_POWER.description": "When this creature dies, draw a card.",
-  "MARINER-ENRICHMENT_POWER.smartDescription": "When this creature dies, the [gold]{Owner.StringValue}[/gold] draws [blue]{Amount}[/blue] {Amount:plural:card|cards}.",
+  "MARINER-ENRICHMENT_POWER.remoteDescription": "When this creature dies, the [gold]{Owner.StringValue}[/gold] draws [blue]{Amount}[/blue] {Amount:plural:card|cards}.",
+  "MARINER-ENRICHMENT_POWER.smartDescription": "When this creature dies, you draw [blue]{Amount}[/blue] {Amount:plural:card|cards}.",
   "MARINER-ENRICHMENT_POWER.title": "Enrichment",
 
+  "MARINER-PETRICHOR_POWER.selectionScreenPrompt": "Choose a card to shuffle into your Draw Pile.",
   "MARINER-PETRICHOR_POWER.description": "",
   "MARINER-PETRICHOR_POWER.smartDescription": "",
   "MARINER-PETRICHOR_POWER.title": "Petrichor",
@@ -31,8 +33,11 @@
   "MARINER-KELP_WALL_POWER.smartDescription": "",
   "MARINER-KELP_WALL_POWER.title": "Kelp Wall",
 
-
   "MARINER-NEMOS_MAP_POWER.description": "",
   "MARINER-NEMOS_MAP_POWER.smartDescription": "",
-  "MARINER-NEMOS_MAP_POWER.title": "Nemo's Map"
+  "MARINER-NEMOS_MAP_POWER.title": "Nemo's Map",
+
+  "MARINER-VOYAGER_FORM_POWER.description": "",
+  "MARINER-VOYAGER_FORM_POWER.smartDescription": "",
+  "MARINER-VOYAGER_FORM_POWER.title": "Voyager Form"
 }
