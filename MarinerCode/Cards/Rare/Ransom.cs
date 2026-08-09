@@ -2,6 +2,7 @@
 using Mariner.MarinerCode.Cards.Variables;
 using Mariner.MarinerCode.Character;
 using Mariner.MarinerCode.Commands;
+using Mariner.MarinerCode.Commands.CombatHistoryEntries;
 using Mariner.MarinerCode.Extensions;
 using Mariner.MarinerCode.Interfaces;
 using MegaCrit.Sts2.Core.Combat;
@@ -20,8 +21,6 @@ public class Ransom() : MarinerCard(5,
     TargetType.AnyEnemy), ISunkenCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(45M, ValueProp.Move)];
-
-    private bool hasSunken = false;
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -35,17 +34,16 @@ public class Ransom() : MarinerCard(5,
         PlayerChoiceContext choiceContext,
         ICombatState combatState)
     {
-        if (player != Owner || !hasSunken)
+        if (player != Owner || !CombatManager.Instance.History.Entries.OfType<CardSunkenEntry>().Any(e => e.HappenedLastPlayerTurn(Owner) && e.Card == this))
             return;
-        if(Pile.Type != PileType.Hand)
+        if(Pile?.Type != PileType.Hand)
             await CardPileCmd.Add(this, PileType.Hand);
         EnergyCost.AddThisCombat(-1);
-        hasSunken = false;
     }
     
-    public async Task OnSunken(PlayerChoiceContext choiceContext)
+    public Task OnSunken(PlayerChoiceContext choiceContext)
     {
-        hasSunken = true;
+        return Task.CompletedTask;
     }
 
     protected override void OnUpgrade()

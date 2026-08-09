@@ -3,6 +3,7 @@ using System.Reflection.Emit;
 using BaseLib.Utils.Patching;
 using HarmonyLib;
 using Mariner.MarinerCode.Commands;
+using Mariner.MarinerCode.Extensions;
 using Mariner.MarinerCode.Interfaces;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -92,6 +93,7 @@ public class SunkenPatch
         for (var i = 0; i < playCount; ++i)
             await sunkenCard.OnSunken(choiceContext);
         
+        CombatManager.Instance.History.CardSunken(card.CombatState, card, playCount);
         if (LocalContext.IsMe(card.Owner))
             await Cmd.CustomScaledWait(0.3f, 0.6f);
         

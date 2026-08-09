@@ -1,5 +1,4 @@
 ﻿using Mariner.MarinerCode.Commands;
-using Mariner.MarinerCode.Powers;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -10,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Powers;
 
-public class KelpWallPower() : MarinerPower
+public sealed class KelpWallPower : MarinerPower
 {
     public override PowerType Type =>
         PowerType.Buff;
