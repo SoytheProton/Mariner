@@ -14,7 +14,7 @@ public sealed class DyingReef() : MarinerCard(1,
     TargetType.Self), IAbyssalCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(7M, ValueProp.Move)];
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Barnacle)];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Abyssal), HoverTipFactory.Static(MarinerStaticHovertip.Barnacle)];
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

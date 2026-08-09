@@ -91,8 +91,11 @@ public class SunkenPatch
         playCount = MarinerHook.ModifySunkenAmount(card.CombatState, card, playCount, out var list);
         await MarinerHook.AfterModifyingSunkenAmount(card.CombatState, card, list);
         for (var i = 0; i < playCount; ++i)
+        {
             await sunkenCard.OnSunken(choiceContext);
-        
+            await Cmd.CustomScaledWait(0.1f, 0.2f);
+        }
+
         CombatManager.Instance.History.CardSunken(card.CombatState, card, playCount);
         if (LocalContext.IsMe(card.Owner))
             await Cmd.CustomScaledWait(0.3f, 0.6f);

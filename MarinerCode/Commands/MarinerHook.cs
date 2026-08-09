@@ -15,7 +15,7 @@ public class MarinerHook
     {
         foreach (var model in Hook.IterateCombatHookListeners(combatState))
         {
-            if(model is not ISubmergeHook submergeModel)
+            if(model is not IAfterSubmergeHook submergeModel)
                 continue;
             choiceContext.PushModel(model);
             await submergeModel.AfterCardSubmerged(choiceContext, card);
@@ -31,7 +31,7 @@ public class MarinerHook
     {
         foreach (var model in Hook.IterateCombatHookListeners(combatState))
         {
-            if(model is not IAbyssalHook abyssalModel)
+            if(model is not IAfterAbyssalHook abyssalModel)
                 continue;
             choiceContext.PushModel(model);
             await abyssalModel.BeforeCardShuffled(choiceContext, card);
@@ -47,7 +47,7 @@ public class MarinerHook
     {
         foreach (var model in Hook.IterateCombatHookListeners(combatState))
         {
-            if(model is not ISunkenHook sunkenHook)
+            if(model is not IAfterSunkenHook sunkenHook)
                 continue;
             choiceContext.PushModel(model);
             await sunkenHook.AfterCardSunken(choiceContext, card);

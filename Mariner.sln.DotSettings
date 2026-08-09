@@ -42,8 +42,14 @@
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1BE313041F989B4185D2966033C031C3/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1BE313041F989B4185D2966033C031C3/Text/@EntryValue">namespace $NAMESPACE$;
 
-public sealed class $CLASS$ : Mariner.MarinerCode.Cards.MarinerCard($COST$, MegaCrit.Sts2.Core.Entities.Cards.CardType.$TYPE$, MegaCrit.Sts2.Core.Entities.Cards.CardRarity.$RARITY$, MegaCrit.Sts2.Core.Entities.Cards.TargetType.$TARGET$) {
+public sealed class $CLASS$() : Mariner.MarinerCode.Cards.MarinerCard($COST$, MegaCrit.Sts2.Core.Entities.Cards.CardType.$TYPE$, MegaCrit.Sts2.Core.Entities.Cards.CardRarity.$RARITY$, MegaCrit.Sts2.Core.Entities.Cards.TargetType.$TARGET$) {
     protected override IEnumerable&lt;MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar&gt; CanonicalVars =&gt; [];
+    
+    protected override HashSet&lt;MegaCrit.Sts2.Core.Entities.Cards.CardTag&gt; CanonicalTags =&gt; [];
+    
+    public override IEnumerable&lt;MegaCrit.Sts2.Core.Entities.Cards.CardKeyword&gt; CanonicalKeywords =&gt; [];
+    
+    protected override IEnumerable&lt;MegaCrit.Sts2.Core.HoverTips.IHoverTip&gt; ExtraHoverTips =&gt; [];
 
     protected override async System.Threading.Tasks.Task OnPlay(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Cards.CardPlay play)
     {
