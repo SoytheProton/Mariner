@@ -7,11 +7,11 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
-namespace Mariner.MarinerCode.Cards.Uncommon;
+namespace Mariner.MarinerCode.Cards.Rare;
 
 [Pool(typeof(MarinerCardPool))]
 public sealed class Drowning() : MarinerCard(2,
-    CardType.Power, CardRarity.Uncommon,
+    CardType.Power, CardRarity.Rare,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new RepeatVar(1)];
