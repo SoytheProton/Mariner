@@ -5,7 +5,7 @@
   "MARINER-DEFEND_MARINER.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "MARINER-DEFEND_MARINER.title": "Defend",
   
-  "MARINER-WASHED_AWAY.description": "Deal {Damage:diff()} damage.\nWhen [gold]Sunken[/gold], deal {Damage2:diff()} damage to ALL enemies.",
+  "MARINER-WASHED_AWAY.description": "Deal {Damage:diff()} damage.\nWhen [gold]Abyssal[/gold], apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
   "MARINER-WASHED_AWAY.title": "Washed Away",
 
   "MARINER-REEF_WALK.description": "Gain {Block:diff()} Block.\n[gold]Submerge[/gold] {Submerge:diff()}.",
