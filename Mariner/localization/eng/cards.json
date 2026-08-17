@@ -60,7 +60,7 @@
   "MARINER-RESURFACE.title": "Resurface",
 
   "MARINER-SEXTANT.selectionScreenPrompt": "Choose a card to put back in your Hand.",
-  "MARINER-SEXTANT.description": "Put a card from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold].\nWhen drawn, deal {Damage:diff()} damage to a random enemy.",
+  "MARINER-SEXTANT.description": "Put a card from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold].\nWhen drawn, gain {Block:diff()} [gold]Block[/gold].",
   "MARINER-SEXTANT.title": "Sextant",
 
   "MARINER-SHELF_BREAK.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Submerge[/gold] {Submerge:diff()}.",
