@@ -31,7 +31,7 @@ public class Mariner : PlaceholderCharacterModel
         ModelDb.Card<DefendMariner>(),
         ModelDb.Card<DefendMariner>(),
         ModelDb.Card<DefendMariner>(),
-        ModelDb.Card<WashedAway>(),
+        ModelDb.Card<AnchorSwing>(),
         ModelDb.Card<ReefWalk>()
     ];
 

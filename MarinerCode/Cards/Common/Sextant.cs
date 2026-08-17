@@ -12,9 +12,8 @@ public sealed class Sextant() : MarinerCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(5M, ValueProp.Move)];
-    
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+    public override bool GainsBlock => true;
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(3M, ValueProp.Move)];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -34,12 +33,11 @@ public sealed class Sextant() : MarinerCard(1,
     {
         if (card != this)
             return;
-        await CreatureCmd.Damage(choiceContext, Owner.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies), DynamicVars.Damage, this, null);
+        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, null, true);
     }
     
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3M);
-        RemoveKeyword(CardKeyword.Exhaust);
+        DynamicVars.Block.UpgradeValueBy(2M);
     }
 }

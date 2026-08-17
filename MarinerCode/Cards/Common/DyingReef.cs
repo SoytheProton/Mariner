@@ -13,6 +13,7 @@ public sealed class DyingReef() : MarinerCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self), IAbyssalCard
 {
+    public override bool GainsBlock => true;
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(7M, ValueProp.Move)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Abyssal), HoverTipFactory.Static(MarinerStaticHovertip.Barnacle)];
     

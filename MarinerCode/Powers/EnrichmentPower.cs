@@ -26,6 +26,7 @@ public sealed class EnrichmentPower : MarinerPower
             AssertMutable();
             ((StringVar)DynamicVars["Owner"]).StringValue = PlatformUtil.GetPlayerName(RunManager.Instance.NetService.Platform, value.NetId);
             _playerOwner = value;
+            Applier = value.Creature;
         }
     }
     

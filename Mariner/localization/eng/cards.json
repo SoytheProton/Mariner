@@ -5,8 +5,8 @@
   "MARINER-DEFEND_MARINER.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "MARINER-DEFEND_MARINER.title": "Defend",
   
-  "MARINER-WASHED_AWAY.description": "Deal {Damage:diff()} damage.\nWhen [gold]Abyssal[/gold], apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
-  "MARINER-WASHED_AWAY.title": "Washed Away",
+  "MARINER-ANCHOR_SWING.description": "Deal {Damage:diff()} damage.\nWhen [gold]Abyssal[/gold], apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
+  "MARINER-ANCHOR_SWING.title": "Anchor Swing",
 
   "MARINER-REEF_WALK.description": "Gain {Block:diff()} Block.\n[gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-REEF_WALK.title": "Reef Walk",
@@ -46,22 +46,17 @@
   "MARINER-BARNACLES.description": "Gain {Block:diff()} [gold]Block[/gold].\nAt the start of your next 2 turns, spawn 1 [gold]Barnacle[/gold].",
   "MARINER-BARNACLES.title": "Barnacles!",
 
-  "MARINER-BAROMETER.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen drawn, apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
-  "MARINER-BAROMETER.title": "Barometer",
-
-  "MARINER-BREATHLESS.description": "[gold]Submerge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Dredge:diff()}.",
-  "MARINER-BREATHLESS.title": "Breathless",
-
   "MARINER-BRINE_BARRIER.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "MARINER-BRINE_BARRIER.title": "Brine Barrier",
 
   "MARINER-DYING_REEF.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen [gold]Abyssal[/gold], spawn 1 [gold]Barnacle[/gold].",
   "MARINER-DYING_REEF.title": "Dying Reef",
 
-  "MARINER-FATHOM.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen [gold]Sunken[/gold], gain {Block2:diff()} [gold]Block[/gold] next turn.",
+  "MARINER-FATHOM.description": "Deal {Damage:diff()} damage.\nIf [gold]Lethal[/gold], gain {Block:diff()} [gold]Block[/gold].",
   "MARINER-FATHOM.title": "Fathom",
-
-  "MARINER-RESURFACE.description": "[gold]Submerge[/gold] {Submerge:diff()}.\nDraw {Cards:diff()} cards.",
+  
+  "MARINER-RESURFACE.selectionScreenPrompt": "Choose a card to put on top of your Draw Pile.",
+  "MARINER-RESURFACE.description": "[gold]Submerge[/gold] {Submerge:diff()}.\nPut a card from your [gold]Discard Pile[/gold] on top of your [gold]Draw Pile[/gold].",
   "MARINER-RESURFACE.title": "Resurface",
 
   "MARINER-SEXTANT.selectionScreenPrompt": "Choose a card to put back in your Hand.",
@@ -82,6 +77,15 @@
   "MARINER-UNCOMMON": "Uncommon Cards",
   
   
+  "MARINER-BAROMETER.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen drawn, apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
+  "MARINER-BAROMETER.title": "Barometer",
+
+  "MARINER-BREATHLESS.description": "[gold]Submerge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Dredge:diff()}.",
+  "MARINER-BREATHLESS.title": "Breathless",
+
+  "MARINER-REEF_BLADE.description": "Deal {Damage:diff()} damage.\nAdd [gold]Ballast[/gold] to a card in your [gold]Hand[/gold].",
+  "MARINER-REEF_BLADE.title": "Reef Blade",
+  
   "MARINER-DRAG_TO_HELL.description": "[gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-DRAG_TO_HELL.title": "Drag to Hell",
 
@@ -99,18 +103,6 @@
 
   "MARINER-BLEEDING_REEF.description": "Deal {Damage:diff()} damage.\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].\nWhen [gold]Abyssal[/gold], gain 1 [gold]Block[/gold] for every card in your [gold]Discard Pile[/gold].",
   "MARINER-BLEEDING_REEF.title": "Bleeding Reef",
-
-  "MARINER-CATCH_AND_RELEASE.description": "[gold]Submerge[/gold] {Submerge:diff()}.\nDraw {Cards:diff()} {Cards:plural:card|cards}.\nWhen [gold]Sunken[/gold], draw {Cards2:diff()} {Cards2:plural:card|cards} next turn.",
-  "MARINER-CATCH_AND_RELEASE.title": "Catch and Release",
-
-  "MARINER-DOUBLOONS.description": "Gain {Energy2:energyIcons()}.\nWhen [gold]Sunken[/gold], gain {Energy:energyIcons()} next turn.",
-  "MARINER-DOUBLOONS.title": "Doubloons",
-
-  "MARINER-DROWNING.description": "Sunken effects trigger an additional time.",
-  "MARINER-DROWNING.title": "Drowning",
-
-  "MARINER-GLIMMERING_REEF.description": "Draw {Cards2:diff()} {Cards2:plural:card|cards}.\n[gold]Submerge[/gold] {Submerge:diff()}.\nWhen [gold]Abyssal[/gold], draw {Cards:diff()} {Cards:plural:card|cards}.",
-  "MARINER-GLIMMERING_REEF.title": "Glimmering Reef",
   
   "MARINER-HALYARD_WHIP.description": "Deal {Damage:diff()} damage.\nAdd [gold]Trawl[/gold] to the top {Cards:diff()} {Cards:plural:card|cards} of your [gold]Draw Pile[/gold].",
   "MARINER-HALYARD_WHIP.title": "Halyard Whip",
@@ -144,6 +136,9 @@
 
   "MARINER-TRANQUIL_WATERS.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold] to ALL enemies.",
   "MARINER-TRANQUIL_WATERS.title": "Tranquil Waters",
+
+  "MARINER-AQUACULTURE.description": "Whenever an enemy dies, deal {AquaculturePower:diff()} damage to ALL enemies.",
+  "MARINER-AQUACULTURE.title": "Aquaculture",
   
 
   
@@ -156,18 +151,11 @@
   "MARINER-TEN_THOUSAND_LEAGUES.description": "[gold]Submerge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Submerge:diff()}.",
   "MARINER-TEN_THOUSAND_LEAGUES.title": "Ten Thousand Leagues",
 
-  "MARINER-DEEPEST_DEPTHS.selectionScreenPrompt": "Select a card to duplicate.",
-  "MARINER-DEEPEST_DEPTHS.description": "Choose a card.\nAt the start of your turn, add 1 copy of that card with [gold]Ballast[/gold] into your [gold]Hand[/gold].",
-  "MARINER-DEEPEST_DEPTHS.title": "Deepest Depths",
-
   "MARINER-THALASSOPHOBIA.description": "Gain {Energy:energyIcons()}.\n[gold]Submerge[/gold] {Submerge:diff()}.\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
   "MARINER-THALASSOPHOBIA.title": "Thalassophobia",
 
   "MARINER-RANSOM.description": "Deal {Damage:diff()} damage.\nIf this card was [gold]Sunken[/gold] last turn, add this into your [gold]Hand[/gold] and reduce its cost by 1.",
   "MARINER-RANSOM.title": "Ransom",
-
-  "MARINER-ATLANTIS.description": "Increase this card's [gold]Block[/gold] by {Increase:diff()} this combat. Return this card to your [gold]Hand[/gold].\nWhen [gold]Sunken[/gold], gain {Block:diff()} [gold]Block[/gold].",
-  "MARINER-ATLANTIS.title": "Atlantis",
   
   "MARINER-ANCHOR_CRASH.description": "Deal {Damage:diff()} damage.\n[gold]Submerge[/gold] {Submerge:diff()}.\nWhen [gold]Sunken[/gold], [gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-ANCHOR_CRASH.title": "Anchor Crash",
@@ -178,14 +166,13 @@
   "MARINER-SIGNAL_LOST.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen drawn, gain {Energy:energyIcons()}.",
   "MARINER-SIGNAL_LOST.title": "Signal Lost",
 
-  "MARINER-HADALPELAGIC.description": "Deal {Damage:diff()} damage.\nIncrease this card's damage by {Increase:diff()} this combat.",
-  "MARINER-HADALPELAGIC.title": "Hadalpelagic",
-
+  "MARINER-DROWNING.description": "Sunken effects trigger an additional time.",
+  "MARINER-DROWNING.title": "Drowning",
   
   
   "MARINER-MISC": "Misc Cards",
   
 
-  "MARINER-BARNACLE_SUMMONER.description": "Summon!!!",
+  "MARINER-BARNACLE_SUMMONER.description": "Summon!!!\nThis is a debug card. You should not be seeing this.",
   "MARINER-BARNACLE_SUMMONER.title": "Barnacle Summoner"
 }

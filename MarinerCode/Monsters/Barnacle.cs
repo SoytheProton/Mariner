@@ -2,12 +2,16 @@
 using Mariner.MarinerCode.Powers;
 using MegaCrit.Sts2.Core.Audio;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.MonsterMoves.Intents;
 using MegaCrit.Sts2.Core.MonsterMoves.MonsterMoveStateMachine;
+using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Monsters;
 
@@ -43,14 +47,29 @@ public class Barnacle : CustomMonsterModel
     protected override MonsterMoveStateMachine GenerateMoveStateMachine()
     {
         var states = new List<MonsterState>();
-        var initialState = new MoveState("GROWTH", Growth, new BuffIntent());
+        var initialState = new MoveState("FILTER", Filter, new UnknownIntent());
         initialState.FollowUpState = initialState;
         states.Add(initialState);
         return new MonsterMoveStateMachine(states, initialState);
     }
 
-    private async Task Growth(IReadOnlyList<Creature> targets)
+    private static Task Filter(IReadOnlyList<Creature> targets)
     {
-        await PowerCmd.Apply<EnrichmentPower>(new ThrowingPlayerChoiceContext(), Creature, 1, Creature, null);
+        return Task.CompletedTask;
+    }
+    
+    public override decimal ModifyDamageMultiplicative(
+        Creature? target,
+        decimal amount,
+        ValueProp props,
+        Creature? dealer,
+        CardModel? cardSource,
+        CardPlay? cardPlay)
+    {
+        if (target != Creature)
+            return 1M;
+        if(dealer != null && dealer.Player != PlayerOwner)
+            return 0M;
+        return 1M;
     }
 }

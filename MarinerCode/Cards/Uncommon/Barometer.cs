@@ -6,10 +6,10 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 
-namespace Mariner.MarinerCode.Cards.Common;
+namespace Mariner.MarinerCode.Cards.Uncommon;
 
 public sealed class Barometer() : MarinerCard(1,
-    CardType.Skill, CardRarity.Common,
+    CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(5M, ValueProp.Move), new PowerVar<WeakPower>(1)];

@@ -5,10 +5,10 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
-namespace Mariner.MarinerCode.Cards.Common;
+namespace Mariner.MarinerCode.Cards.Uncommon;
 
 public sealed class Breathless() : MarinerCard(2,
-    CardType.Skill, CardRarity.Common,
+    CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new SubmergeVar(13), new DredgeVar(13)];

@@ -10,6 +10,7 @@ public sealed class BrineBarrier() : MarinerCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
+    public override bool GainsBlock => true;
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(8M, ValueProp.Move)];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];

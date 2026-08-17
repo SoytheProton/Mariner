@@ -4,7 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 
 namespace Mariner.MarinerCode.Patches;
 
-public class CreaturePatch
+public class CreaturePatches
 {
     [HarmonyPatch(typeof(Creature), nameof(Creature.ScaleMonsterHpForMultiplayer))]
     public class FilterForCombatPatch

@@ -12,6 +12,7 @@ public class Barnacles() : MarinerCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
+    public override bool GainsBlock => true;
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(4M, ValueProp.Move), new PowerVar<BarnaclesPower>(2)];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Barnacle)];

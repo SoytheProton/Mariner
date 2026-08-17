@@ -13,6 +13,7 @@ public sealed class ShelfBreak() : MarinerCard(2,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
+    public override bool GainsBlock => true;
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(14, ValueProp.Move), new SubmergeVar(5)];
 
     protected override async Task OnPlay(

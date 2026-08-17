@@ -12,7 +12,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace Mariner.MarinerCode.Cards.Basic;
 
 [Pool(typeof(MarinerCardPool))]
-public sealed class WashedAway() : MarinerCard(2, CardType.Attack,
+public sealed class AnchorSwing() : MarinerCard(2, CardType.Attack,
     CardRarity.Basic, TargetType.AnyEnemy), IAbyssalCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(12M, ValueProp.Move), new PowerVar<WeakPower>(1)];
