@@ -13,7 +13,7 @@ public sealed class Sextant() : MarinerCard(1,
     TargetType.Self)
 {
     public override bool GainsBlock => true;
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(3M, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(2M, ValueProp.Move)];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

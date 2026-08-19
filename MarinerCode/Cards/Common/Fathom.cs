@@ -23,8 +23,7 @@ public sealed class Fathom() : MarinerCard(0,
         var attackCommand = await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         if (attackCommand.Results.SelectMany(r => r).Any(r => r.WasTargetKilled))
         {
-            for (var i = 0; i < DynamicVars.Repeat._baseValue; i++)
-                await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
+            await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
         }
     }
 

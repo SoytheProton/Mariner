@@ -14,7 +14,7 @@ public sealed class ShimmeringRain() : MarinerCard(1,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.None)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(8M, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(4M, ValueProp.Move)];
     
     public override async Task AfterCardDrawn(
         PlayerChoiceContext choiceContext,
@@ -38,6 +38,6 @@ public sealed class ShimmeringRain() : MarinerCard(1,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(3M);
+        DynamicVars.Block.UpgradeValueBy(2M);
     }
 }

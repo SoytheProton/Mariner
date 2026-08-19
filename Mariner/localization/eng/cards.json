@@ -83,6 +83,7 @@
   "MARINER-BREATHLESS.description": "[gold]Submerge[/gold] {Submerge:diff()}.\n[gold]Dredge[/gold] {Dredge:diff()}.",
   "MARINER-BREATHLESS.title": "Breathless",
 
+  "MARINER-REEF_BLADE.selectionScreenPrompt": "Choose a card to add [gold]Ballast[/gold].",
   "MARINER-REEF_BLADE.description": "Deal {Damage:diff()} damage.\nAdd [gold]Ballast[/gold] to a card in your [gold]Hand[/gold].",
   "MARINER-REEF_BLADE.title": "Reef Blade",
   
@@ -98,7 +99,7 @@
   "MARINER-ANCHOR_SLAM.description": "Deal {Damage:diff()} damage.\nWhen [gold]Abyssal[/gold], [gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-ANCHOR_SLAM.title": "Anchor Slam",
 
-  "MARINER-AQUATIC_TOPAZ.description": "At the start of each combat, put this card into your [gold]Discard Pile[/gold].\nGain {Energy:energyIcons()}.\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
+  "MARINER-AQUATIC_TOPAZ.description": "At the start of each combat, put this card into your [gold]Discard Pile[/gold].\nGain {Energy:energyIcons()}. ",
   "MARINER-AQUATIC_TOPAZ.title": "Aquatic Topaz",
 
   "MARINER-BLEEDING_REEF.description": "Deal {Damage:diff()} damage.\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].\nWhen [gold]Abyssal[/gold], gain 1 [gold]Block[/gold] for every card in your [gold]Discard Pile[/gold].",

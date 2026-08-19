@@ -20,7 +20,7 @@ public sealed class HalyardWhip() : MarinerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         var cards = PileType.Draw.GetPile(Owner).Cards.Take(DynamicVars.Cards.IntValue).ToList();
         foreach (var card in cards)
         {

@@ -15,7 +15,7 @@ namespace Mariner.MarinerCode.Cards.Basic;
 public sealed class AnchorSwing() : MarinerCard(2, CardType.Attack,
     CardRarity.Basic, TargetType.AnyEnemy), IAbyssalCard
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(12M, ValueProp.Move), new PowerVar<WeakPower>(1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(15M, ValueProp.Move), new PowerVar<WeakPower>(1)];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Abyssal), HoverTipFactory.FromPower<WeakPower>()];
 

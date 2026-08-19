@@ -1,5 +1,6 @@
 ﻿using BaseLib.Utils;
 using Mariner.MarinerCode.Character;
+using Mariner.MarinerCode.Commands;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -14,14 +15,14 @@ public sealed class AquaticTopaz() : MarinerCard(0,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar(1), new CardsVar(1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar(2)];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
         await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
-        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
     }
     
     public override async Task BeforeHandDraw(
@@ -31,8 +32,8 @@ public sealed class AquaticTopaz() : MarinerCard(0,
     {
         if (player != Owner || player.PlayerCombatState?.TurnNumber > 1)
             return;
-        await CardPileCmd.Add(this, PileType.Discard, skipVisuals:true);
+        await SubmergeCmd.Submerge(choiceContext, this);
     }
 
-    protected override void OnUpgrade() => DynamicVars.Cards.UpgradeValueBy(1M);
+    protected override void OnUpgrade() => DynamicVars.Energy.UpgradeValueBy(1M);
 }

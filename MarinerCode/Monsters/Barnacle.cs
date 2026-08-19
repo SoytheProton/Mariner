@@ -47,7 +47,7 @@ public class Barnacle : CustomMonsterModel
     protected override MonsterMoveStateMachine GenerateMoveStateMachine()
     {
         var states = new List<MonsterState>();
-        var initialState = new MoveState("FILTER", Filter, new UnknownIntent());
+        var initialState = new MoveState("FILTER", Filter, new HiddenIntent());
         initialState.FollowUpState = initialState;
         states.Add(initialState);
         return new MonsterMoveStateMachine(states, initialState);

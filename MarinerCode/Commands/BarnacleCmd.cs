@@ -14,7 +14,7 @@ namespace Mariner.MarinerCode.Commands;
 
 public static class BarnacleCmd
 {
-    public const int BarnacleCap = 8;
+    public const int BarnacleCap = 4;
 
     public static async Task Spawn(
         PlayerChoiceContext choiceContext,

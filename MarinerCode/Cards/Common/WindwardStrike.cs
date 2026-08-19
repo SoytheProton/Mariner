@@ -21,7 +21,7 @@ public sealed class WindwardStrike() : MarinerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
     }
     
     public async Task OnSunken(PlayerChoiceContext choiceContext)
