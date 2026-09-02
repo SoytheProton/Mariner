@@ -11,7 +11,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 namespace Mariner.MarinerCode.Cards.Uncommon;
 
 [Pool(typeof(MarinerCardPool))]
-public sealed class DragToHell() : MarinerCard(3,
+public sealed class DragToHell() : MarinerCard(2,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {

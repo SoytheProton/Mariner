@@ -190,6 +190,9 @@
   "MARINER-BERMUDA_TRIANGLE.description": "Transform {Cards:diff()} {Cards:plural:card|cards} in your draw pile into [gold]Bermuda Triangle[/gold].\nWhen drawn, deal 2 damage to ALL enemies for every [gold]Bermuda Triangle[/gold]. ",
   "MARINER-BERMUDA_TRIANGLE.title": "Bermuda Triangle",
 
+  "MARINER-HYPNOTIC_TIDE.description": "Trigger the [gold]Abyssal[/gold] effect of cards you play.",
+  "MARINER-HYPNOTIC_TIDE.title": "Hypnotic Tide",
+
   
   "MARINER-MISC": "Misc Cards",
   
