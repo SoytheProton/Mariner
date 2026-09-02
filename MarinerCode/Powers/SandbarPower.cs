@@ -22,7 +22,6 @@ public sealed class SandbarPower : MarinerPower, IAfterSubmergeHook
     {
         if(card.Owner.Creature != Owner)
             return;
-        await CardCmd.AutoPlay(choiceContext, card, null);
         await CreatureCmd.Damage(choiceContext, CombatState.HittableEnemies, Amount, ValueProp.Unpowered, Owner);
     }
 }

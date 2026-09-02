@@ -23,5 +23,6 @@ public sealed class ShiftingSeasPower : MarinerPower
         if (shuffler != Owner.Player)
             return;
         await CardPileCmd.Draw(choiceContext, Amount, Owner.Player);
+        Flash();
     }
 }

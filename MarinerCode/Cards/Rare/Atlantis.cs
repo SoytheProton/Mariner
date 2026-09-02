@@ -2,6 +2,7 @@
 using Mariner.MarinerCode.Cards;
 using Mariner.MarinerCode.Cards.Other;
 using Mariner.MarinerCode.Character;
+using Mariner.MarinerCode.Interfaces;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -14,7 +15,7 @@ namespace Mariner.MarinerCode.Cards.Rare;
 [Pool(typeof(MarinerCardPool))]
 public sealed class Atlantis() : MarinerCard(2,
     CardType.Skill, CardRarity.Rare,
-    TargetType.None)
+    TargetType.None), ISunkenCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [];
 

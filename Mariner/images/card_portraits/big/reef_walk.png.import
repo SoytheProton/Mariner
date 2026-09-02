@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy456v8p81t3v"
-path="res://.godot/imported/bermuda_triangle.png-b7ffc896ff065c9455e9a81eda2307c8.ctex"
+uid="uid://bhyarrgaxxp4s"
+path="res://.godot/imported/reef_walk.png-f689e6a5226d8dce0d1e6889bb43d2ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mariner/images/card_portraits/big/bermuda_triangle.png"
-dest_files=["res://.godot/imported/bermuda_triangle.png-b7ffc896ff065c9455e9a81eda2307c8.ctex"]
+source_file="res://Mariner/images/card_portraits/big/reef_walk.png"
+dest_files=["res://.godot/imported/reef_walk.png-f689e6a5226d8dce0d1e6889bb43d2ed.ctex"]
 
 [params]
 

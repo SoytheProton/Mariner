@@ -17,13 +17,14 @@ namespace Mariner.MarinerCode.Cards.Rare;
 [Pool(typeof(MarinerCardPool))]
 public sealed class BermudaTriangle() : MarinerCard(2,
     CardType.Skill, CardRarity.Rare,
-    TargetType.Self), ISunkenCard, IAbyssalCard
+    TargetType.Self)/*, ISunkenCard, IAbyssalCard*/
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CardsVar(1), 
-        new CalculationBaseVar(1M),
-        new ExtraDamageVar(1M),
-        new CalculatedDamageVar(ValueProp.Move).WithMultiplier((Func<CardModel, Creature, Decimal>) ((card, _) => card.Owner.PlayerCombatState.AllCards.Count(c => c is BermudaTriangle)))];
+        new CalculationBaseVar(0M),
+        new ExtraDamageVar(2M),
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier(static (card, _) => card.Owner.PlayerCombatState.AllCards.Count(c => c is BermudaTriangle))
+    ];
 
     protected override HashSet<CardTag> CanonicalTags => [];
 
@@ -51,9 +52,9 @@ public sealed class BermudaTriangle() : MarinerCard(2,
     {
         if (card != this)
             return;
-        await CreatureCmd.Damage(choiceContext, CombatState.HittableEnemies, DynamicVars.CalculatedDamage.IntValue, ValueProp.Move, Owner.Creature);
+        await CreatureCmd.Damage(choiceContext, CombatState.HittableEnemies, DynamicVars.CalculatedDamage.Calculate(null), ValueProp.Move, Owner.Creature);
     }
-    
+    /*
     public async Task OnSunken(PlayerChoiceContext choiceContext)
     {
         await CreatureCmd.Damage(choiceContext, CombatState.HittableEnemies, DynamicVars.CalculatedDamage.IntValue, ValueProp.Move, Owner.Creature);
@@ -63,7 +64,7 @@ public sealed class BermudaTriangle() : MarinerCard(2,
     {
         await CreatureCmd.Damage(choiceContext, CombatState.HittableEnemies, DynamicVars.CalculatedDamage.IntValue, ValueProp.Move, Owner.Creature);
     }
-
+*/
     protected override void OnUpgrade()
     {
         DynamicVars.Cards.UpgradeValueBy(1);

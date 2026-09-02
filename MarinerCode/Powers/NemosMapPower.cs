@@ -20,12 +20,15 @@ public sealed class NemosMapPower : MarinerPower
         CombatSide side,
         IEnumerable<Creature> participants)
     {
+        MarinerMainFile.Logger.Info("Check 0");
         var enumerable = participants.ToList();
         if (!enumerable.Contains(Owner))
             return;
+        MarinerMainFile.Logger.Info("Check 1");
         Flash();
-        foreach (var unused in enumerable.Where(c => c.Side == CombatSide.Enemy))
+        foreach (var unused in CombatState.HittableEnemies)
         {
+            MarinerMainFile.Logger.Info("Check 2");
             await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Unpowered, null, true);
             await Cmd.Wait(0.1f);
         }

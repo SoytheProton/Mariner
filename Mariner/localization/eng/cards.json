@@ -147,7 +147,7 @@
   "MARINER-SANDBAR.description": "Whenever you Submerge a card, deal {SandbarPower:diff()} damage to ALL enemies.",
   "MARINER-SANDBAR.title": "Sandbar",
 
-  "MARINER-SHIFTING_SEAS.description": "Whenever you shuffle your [gold]Draw Pile[gold], draw {ShiftingSeasPower:diff()} {ShiftingSeasPower:plural:card|cards}.",
+  "MARINER-SHIFTING_SEAS.description": "Whenever you shuffle your [gold]Draw Pile[/gold], draw {ShiftingSeasPower:diff()} {ShiftingSeasPower:plural:card|cards}.",
   "MARINER-SHIFTING_SEAS.title": "Shifting Seas",
 
   
@@ -187,7 +187,7 @@
   "MARINER-MANTLE_EXPULSION.description": "Deal {Damage:diff()} damage.\nWhen drawn, this gains [gold]Replay[/gold].",
   "MARINER-MANTLE_EXPULSION.title": "Mantle Expulsion",
 
-  "MARINER-BERMUDA_TRIANGLE.description": "Transform {Cards:diff()} {Cards:plural:card|cards} in your draw pile into [gold]Bermuda Triangle[/gold].\nWhen drawn, [gold]Sunken[/gold], or [gold]Abyssal[/gold], deal 1 damage to ALL enemies for every [gold]Bermuda Triangle[gold]. ",
+  "MARINER-BERMUDA_TRIANGLE.description": "Transform {Cards:diff()} {Cards:plural:card|cards} in your draw pile into [gold]Bermuda Triangle[/gold].\nWhen drawn, deal 2 damage to ALL enemies for every [gold]Bermuda Triangle[/gold]. ",
   "MARINER-BERMUDA_TRIANGLE.title": "Bermuda Triangle",
 
   

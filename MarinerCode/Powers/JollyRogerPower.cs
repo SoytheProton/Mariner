@@ -27,6 +27,10 @@ public class JollyRogerPower() : MarinerPower
             list.Add(new CardReward(options, 1, Owner.Player));
         }
 
-        await RewardsCmd.OfferCustom(Owner.Player, list);
+        foreach (Reward item in list)
+        {
+            room.AddExtraReward(Owner.Player, item);   
+        }
+        // await RewardsCmd.OfferCustom(Owner.Player, list);
     }
 }
