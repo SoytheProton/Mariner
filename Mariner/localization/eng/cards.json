@@ -140,7 +140,15 @@
 
   "MARINER-AQUACULTURE.description": "Whenever an enemy dies, deal {AquaculturePower:diff()} damage to ALL enemies.",
   "MARINER-AQUACULTURE.title": "Aquaculture",
-  
+
+  "MARINER-DEPTH_CELLS.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].\nWhen [gold]Abyssal[/gold], shuffle a copy of this into your [gold]Draw Pile[/gold].",
+  "MARINER-DEPTH_CELLS.title": "Depth Cells",
+
+  "MARINER-SANDBAR.description": "Whenever you Submerge a card, deal {SandbarPower:diff()} damage to ALL enemies.",
+  "MARINER-SANDBAR.title": "Sandbar",
+
+  "MARINER-SHIFTING_SEAS.description": "Whenever you shuffle your [gold]Draw Pile[gold], draw {ShiftingSeasPower:diff()} {ShiftingSeasPower:plural:card|cards}.",
+  "MARINER-SHIFTING_SEAS.title": "Shifting Seas",
 
   
   "MARINER-RARE": "Rare Cards",
@@ -169,11 +177,26 @@
 
   "MARINER-DROWNING.description": "Sunken effects trigger an additional time.",
   "MARINER-DROWNING.title": "Drowning",
-  
+
+  "MARINER-ATLANTIS.description": "When [gold]Sunken[/gold], shuffle 1 [gold]Marble Statue(+)[/gold] into your [gold]Draw Pile[/gold].",
+  "MARINER-ATLANTIS.title": "Atlantis",
+
+  "MARINER-JOLLY_ROGER.description": "Add 1 Rare card to this combat's rewards.",
+  "MARINER-JOLLY_ROGER.title": "Jolly Roger",
+
+  "MARINER-MANTLE_EXPULSION.description": "Deal {Damage:diff()} damage.\nWhen drawn, this gains [gold]Replay[/gold].",
+  "MARINER-MANTLE_EXPULSION.title": "Mantle Expulsion",
+
+  "MARINER-BERMUDA_TRIANGLE.description": "Transform {Cards:diff()} {Cards:plural:card|cards} in your draw pile into [gold]Bermuda Triangle[/gold].\nWhen drawn, [gold]Sunken[/gold], or [gold]Abyssal[/gold], deal 1 damage to ALL enemies for every [gold]Bermuda Triangle[gold]. ",
+  "MARINER-BERMUDA_TRIANGLE.title": "Bermuda Triangle",
+
   
   "MARINER-MISC": "Misc Cards",
   
 
   "MARINER-BARNACLE_SUMMONER.description": "Summon!!!\nThis is a debug card. You should not be seeing this.",
-  "MARINER-BARNACLE_SUMMONER.title": "Barnacle Summoner"
+  "MARINER-BARNACLE_SUMMONER.title": "Barnacle Summoner",
+
+  "MARINER-MARBLE_STATUE.description": "When [gold]Sunken[/gold], gain {StrengthPower:diff()} [gold]Strength[/gold].",
+  "MARINER-MARBLE_STATUE.title": "Marble Statue"
 }

@@ -22,6 +22,6 @@ public sealed class AquaculturePower : MarinerPower
         if (target.Side == Owner.Side)
             return;
         Flash();
-        await CreatureCmd.Damage(choiceContext, CombatState.HittableEnemies.Where(c => c.Monster is not Barnacle), Amount, ValueProp.Unpowered, Owner);
+        await CreatureCmd.Damage(choiceContext, CombatState.HittableEnemies, Amount, ValueProp.Unpowered, Owner);
     }
 }

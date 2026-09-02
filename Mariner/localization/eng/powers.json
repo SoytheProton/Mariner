@@ -43,5 +43,21 @@
 
   "MARINER-AQUACULTURE_POWER.description": "",
   "MARINER-AQUACULTURE_POWER.smartDescription": "",
-  "MARINER-AQUACULTURE_POWER.title": "Aquaculture"
+  "MARINER-AQUACULTURE_POWER.title": "Aquaculture",
+
+  "MARINER-HYPNOTIC_TIDE_POWER.description": "",
+  "MARINER-HYPNOTIC_TIDE_POWER.smartDescription": "",
+  "MARINER-HYPNOTIC_TIDE_POWER.title": "Hypnotic Tide",
+
+  "MARINER-SANDBAR_POWER.description": "",
+  "MARINER-SANDBAR_POWER.smartDescription": "",
+  "MARINER-SANDBAR_POWER.title": "Sandbar",
+
+  "MARINER-JOLLY_ROGER_POWER.description": "",
+  "MARINER-JOLLY_ROGER_POWER.smartDescription": "",
+  "MARINER-JOLLY_ROGER_POWER.title": "Jolly Roger",
+
+  "MARINER-SHIFTING_SEAS_POWER.description": "",
+  "MARINER-SHIFTING_SEAS_POWER.smartDescription": "",
+  "MARINER-SHIFTING_SEAS_POWER.title": "Shifting Seas"
 }
