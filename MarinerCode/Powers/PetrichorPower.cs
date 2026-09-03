@@ -22,6 +22,7 @@ public sealed class PetrichorPower : MarinerPower
     {
         if (player != Owner.Player)
             return;
+        Flash();
         var prefs = new CardSelectorPrefs(SelectionScreenPrompt, Amount);
         var array = (await CardSelectCmd.FromHand(choiceContext, Owner.Player, prefs, null, this)).ToArray();
         if (array.Length == 0)

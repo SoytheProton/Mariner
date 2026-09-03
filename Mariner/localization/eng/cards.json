@@ -114,7 +114,7 @@
   "MARINER-RIP_CURRENT.description": "Whenever you draw a card with an effect when drawn, draw {Cards:diff()} {Cards:plural:card|cards}.",
   "MARINER-RIP_CURRENT.title": "Rip Current",
   
-  "MARINER-KELP_WALL.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhenever you are attacked this turn, spawn 1 [gold]Barnacle[/gold].",
+  "MARINER-KELP_WALL.description": "Gain {Block:diff()} [gold]Block[/gold].\nThe next {KelpWallPower:diff()} times you are attacked, spawn 1 [gold]Barnacle[/gold].",
   "MARINER-KELP_WALL.title": "Kelp Wall",
 
   "MARINER-MOONPOOL.description": "When [gold]Abyssal[/gold], gain {Energy:energyIcons()}{IfUpgraded:show: and draw {Cards:diff()} {Cards:plural:card|cards}|}.",

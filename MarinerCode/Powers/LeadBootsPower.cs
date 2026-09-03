@@ -16,5 +16,6 @@ public sealed class LeadBootsPower : MarinerPower
         if (player != Owner.Player)
             return;
         await SubmergeCmd.Submerge(choiceContext, Amount, player);
+        Flash();
     }
 }

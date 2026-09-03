@@ -28,15 +28,7 @@ public sealed class KelpWallPower : MarinerPower
         if (target != Owner || dealer == null || !props.IsPoweredAttack())
             return;
         await BarnacleCmd.Spawn(choiceContext, Owner.Player, this);
-    }
-
-    public override async Task AfterSideTurnEnd(
-        PlayerChoiceContext choiceContext,
-        CombatSide side,
-        IEnumerable<Creature> participants)
-    {
-        if (Owner.Side == side)
-            return;
-        await PowerCmd.Remove(this);
+        Flash();
+        await PowerCmd.Decrement(this);
     }
 }

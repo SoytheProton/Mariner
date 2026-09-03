@@ -20,6 +20,7 @@ public class HypnoticTidePower() : MarinerPower
     {
         if (cardPlay.Card.Owner != Owner.Player || cardPlay.Card is not IAbyssalCard card)
             return;
+        Flash();
         for (var i = 0; i < Amount; i++)
         {
             await card.BeforeShuffled(choiceContext);

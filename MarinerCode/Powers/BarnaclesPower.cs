@@ -23,6 +23,7 @@ public sealed class BarnaclesPower : MarinerPower
         if (player != Owner.Player)
             return;
         await BarnacleCmd.Spawn(new ThrowingPlayerChoiceContext(), Owner.Player, this);
+        Flash();
         await PowerCmd.Decrement(this);
     }
 }

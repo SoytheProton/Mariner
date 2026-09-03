@@ -21,5 +21,6 @@ public sealed class VoyagerFormPower : MarinerPower, IAfterSubmergeHook
         if(card.Owner.Creature != Owner || CombatManager.Instance.History.Entries.OfType<CardSubmergedEntry>().Count(e => e.HappenedThisTurn(CombatState) && e.Actor == Owner) > Amount)
             return;
         await CardCmd.AutoPlay(choiceContext, card, null);
+        Flash();
     }
 }

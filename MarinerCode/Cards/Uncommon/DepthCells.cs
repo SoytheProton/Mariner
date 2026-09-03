@@ -13,11 +13,11 @@ using MegaCrit.Sts2.Core.Models.Powers;
 namespace Mariner.MarinerCode.Cards.Uncommon;
 
 [Pool(typeof(MarinerCardPool))]
-public sealed class DepthCells() : MarinerCard(1,
+public sealed class DepthCells() : MarinerCard(0,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self), IAbyssalCard
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<StrengthPower>(2)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<StrengthPower>(1)];
 
     protected override HashSet<CardTag> CanonicalTags => [];
 
