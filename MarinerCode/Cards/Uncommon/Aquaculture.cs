@@ -14,7 +14,7 @@ public sealed class Aquaculture() : MarinerCard(1,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<AquaculturePower>(9)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<AquaculturePower>(5)];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -23,5 +23,5 @@ public sealed class Aquaculture() : MarinerCard(1,
         await PowerCmd.Apply<AquaculturePower>(choiceContext, Owner.Creature, DynamicVars.Power<AquaculturePower>().BaseValue, Owner.Creature, this);
     }
 
-    protected override void OnUpgrade() => DynamicVars.Power<AquaculturePower>().UpgradeValueBy(3M);
+    protected override void OnUpgrade() => DynamicVars.Power<AquaculturePower>().UpgradeValueBy(2M);
 }

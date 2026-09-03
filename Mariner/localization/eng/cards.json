@@ -150,6 +150,9 @@
   "MARINER-SHIFTING_SEAS.description": "Whenever you shuffle your [gold]Draw Pile[/gold], draw {ShiftingSeasPower:diff()} {ShiftingSeasPower:plural:card|cards}.",
   "MARINER-SHIFTING_SEAS.title": "Shifting Seas",
 
+  "MARINER-SURF.description": "Shuffle this card into your draw pile.\nThe next time you draw this, draw {Cards:diff()} cards.",
+  "MARINER-SURF.title": "Surf",
+
   
   "MARINER-RARE": "Rare Cards",
   
