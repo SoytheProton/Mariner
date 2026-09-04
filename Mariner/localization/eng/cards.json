@@ -211,6 +211,9 @@
   "MARINER-HYPNOTIC_TIDE.description": "Trigger the [gold]Abyssal[/gold] effect of cards you play.",
   "MARINER-HYPNOTIC_TIDE.title": "Hypnotic Tide",
 
+  "MARINER-CONDUIT.description": "Whenever a [gold]Barnacle[/gold] is spawned, gain {Repeat:diff()} [gold]Block[/gold].",
+  "MARINER-CONDUIT.title": "Conduit",
+
   
   "MARINER-MISC": "Misc Cards",
   

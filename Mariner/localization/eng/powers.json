@@ -63,5 +63,9 @@
   
   "MARINER-TENEBRIS_POWER.description": "",
   "MARINER-TENEBRIS_POWER.smartDescription": "",
-  "MARINER-TENEBRIS_POWER.title": "Tenebris"
+  "MARINER-TENEBRIS_POWER.title": "Tenebris",
+
+  "MARINER-CONDUIT_POWER.description": "",
+  "MARINER-CONDUIT_POWER.smartDescription": "",
+  "MARINER-CONDUIT_POWER.title": "Conduit"
 }
