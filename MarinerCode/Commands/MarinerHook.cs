@@ -1,5 +1,6 @@
 ﻿using Mariner.MarinerCode.Interfaces;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
@@ -8,6 +9,22 @@ namespace Mariner.MarinerCode.Commands;
 
 public class MarinerHook
 {
+    public static async Task BeforeBarnacleSummoned(
+        ICombatState combatState,
+        PlayerChoiceContext choiceContext,
+        Player summoner)
+    {
+        foreach (var model in Hook.IterateCombatHookListeners(combatState))
+        {
+            if(model is not IBeforeBarnacleHook barnacleHook)
+                continue;
+            choiceContext.PushModel(model);
+            await barnacleHook.BeforeBarnacle(choiceContext, summoner);
+            model.InvokeExecutionFinished();
+            choiceContext.PopModel(model);
+        }
+    }
+    
     public static async Task AfterCardSubmerged(
         ICombatState combatState,
         PlayerChoiceContext choiceContext,

@@ -1,11 +1,11 @@
 {
   "MARINER-DREDGE.description": "Choose [blue]1[/blue] card from the most recent cards put into your [gold]Discard Pile[/gold] to put into your [gold]Hand[/gold].",
   "MARINER-DREDGE.title": "Dredge",
-  "MARINER-SUBMERGE.description": "Discard the top cards from the [gold]Draw Pile[/gold].",
+  "MARINER-SUBMERGE.description": "Put the top cards from the [gold]Draw Pile[/gold] into the [gold]Discard Pile[/gold].",
   "MARINER-SUBMERGE.title": "Submerge",
   "MARINER-DREDGE_DYNAMIC.description": "Choose [blue]1[/blue] card from the [blue]{Dredge}[/blue] most recent cards put into your [gold]Discard Pile[/gold] to put into your [gold]Hand[/gold].",
   "MARINER-DREDGE_DYNAMIC.title": "Dredge {Dredge}",
-  "MARINER-SUBMERGE_DYNAMIC.description": "Discard the top {Submerge:plural:card|[blue]{Submerge}[/blue] cards} from the [gold]Draw Pile[/gold].",
+  "MARINER-SUBMERGE_DYNAMIC.description": "Put the top {Submerge:plural:card|[blue]{Submerge}[/blue] cards} from the [gold]Draw Pile[/gold] into the [gold]Discard Pile[/gold].",
   "MARINER-SUBMERGE_DYNAMIC.title": "Submerge {Submerge}",
   "MARINER-ABYSSAL.description": "Trigger this effect when shuffling while this card is in the [gold]Discard Pile[/gold].",
   "MARINER-ABYSSAL.title": "Abyssal",

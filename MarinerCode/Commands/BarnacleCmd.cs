@@ -28,6 +28,8 @@ public static class BarnacleCmd
         if(!CheckIfPossibleAndShowThoughtBubbleIfNot(playerNode))
             return;
         
+        await MarinerHook.BeforeBarnacleSummoned(combatState, choiceContext, summoner);
+        
         var creature = await CreatureCmd.Add(barnacle, combatState);
         var node = NCombatRoom.Instance?.GetCreatureNode(creature);
         if(playerNode != null)
