@@ -14,7 +14,7 @@ public sealed class Sandbar() : MarinerCard(2,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<SandbarPower>(2)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<SandbarPower>(1)];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [];
 
@@ -25,5 +25,5 @@ public sealed class Sandbar() : MarinerCard(2,
         await PowerCmd.Apply<SandbarPower>(choiceContext, Owner.Creature, DynamicVars.Power<SandbarPower>().BaseValue, Owner.Creature, this);
     }
 
-    protected override void OnUpgrade() => DynamicVars["SandbarPower"].UpgradeValueBy(1);
+    protected override void OnUpgrade() => AddKeyword(MarinerCardKeywords.Trawl);
 }

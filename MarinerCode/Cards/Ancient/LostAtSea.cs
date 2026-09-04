@@ -1,6 +1,5 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Utils;
-using Mariner.MarinerCode.Cards.Ancient;
 using Mariner.MarinerCode.Character;
 using Mariner.MarinerCode.Interfaces;
 using MegaCrit.Sts2.Core.Commands;
@@ -12,13 +11,14 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 
-namespace Mariner.MarinerCode.Cards.Basic;
+namespace Mariner.MarinerCode.Cards.Ancient;
 
 [Pool(typeof(MarinerCardPool))]
-public sealed class AnchorSwing() : MarinerCard(2, CardType.Attack,
-    CardRarity.Basic, TargetType.AnyEnemy), IAbyssalCard, ITranscendenceCard
+public sealed class LostAtSea() : MarinerCard(2,
+    CardType.Attack, CardRarity.Ancient,
+    TargetType.AnyEnemy), IAbyssalCard
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(15M, ValueProp.Move), new PowerVar<WeakPower>(1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(35M, ValueProp.Move), new PowerVar<WeakPower>(3)];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Abyssal), HoverTipFactory.FromPower<WeakPower>()];
 
@@ -36,11 +36,6 @@ public sealed class AnchorSwing() : MarinerCard(2, CardType.Attack,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4M);
-    }
-
-    public CardModel GetTranscendenceTransformedCard()
-    {
-        return ModelDb.Card<LostAtSea>();
+        DynamicVars.Damage.UpgradeValueBy(9M);
     }
 }

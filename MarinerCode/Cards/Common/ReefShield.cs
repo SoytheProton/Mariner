@@ -1,23 +1,21 @@
-﻿using Mariner.MarinerCode.Interfaces;
+﻿using Mariner.MarinerCode.Cards;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mariner.MarinerCode.Cards.Common;
 
-public sealed class Twilight() : MarinerCard(0,
+public sealed class ReefShield() : MarinerCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
     public override bool GainsBlock => true;
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(4, ValueProp.Move)];
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [];
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [MarinerCardKeywords.Trawl];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(8M, ValueProp.Move)];
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -25,7 +23,7 @@ public sealed class Twilight() : MarinerCard(0,
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
     }
-
+    
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(3M);

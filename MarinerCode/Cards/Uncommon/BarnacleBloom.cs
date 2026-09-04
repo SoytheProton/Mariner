@@ -6,10 +6,10 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 
-namespace Mariner.MarinerCode.Cards.Common;
+namespace Mariner.MarinerCode.Cards.Uncommon;
 
 public sealed class BarnacleBloom() : MarinerCard(1,
-    CardType.Attack, CardRarity.Common,
+    CardType.Attack, CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(9M, ValueProp.Move), new RepeatVar(2)];

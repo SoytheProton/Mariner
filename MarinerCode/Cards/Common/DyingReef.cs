@@ -26,7 +26,6 @@ public sealed class DyingReef() : MarinerCard(1,
     
     public async Task BeforeShuffled(PlayerChoiceContext choiceContext)
     {
-        MarinerMainFile.Logger.Info("Before shuffled ran???");
         await BarnacleCmd.Spawn(choiceContext, Owner, this);
     }
     

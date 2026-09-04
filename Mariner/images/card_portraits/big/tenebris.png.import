@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca2im4brd8flf"
-valid=false
+uid="uid://cj45k7so2swnt"
+path="res://.godot/imported/tenebris.png-1f57ea72556ca5cf7aa38c9d9ef04066.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Mariner/images/card_portraits/big/tenebris.png"
+dest_files=["res://.godot/imported/tenebris.png-1f57ea72556ca5cf7aa38c9d9ef04066.ctex"]
 
 [params]
 

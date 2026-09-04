@@ -61,7 +61,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="MarinerCode\Cards\Ancient\" />
         <Folder Include="Mariner\images\card_portraits\big\"/>
         <Folder Include="Mariner\images\powers\big\"/>
         <Folder Include="Mariner\images\relics\big\"/>

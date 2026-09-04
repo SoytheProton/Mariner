@@ -11,8 +11,13 @@
   "MARINER-REEF_WALK.description": "Gain {Block:diff()} Block.\n[gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-REEF_WALK.title": "Reef Walk",
 
+  "MARINER-LOST_AT_SEA.description": "Deal {Damage:diff()} damage.\nWhen [gold]Abyssal[/gold], apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
+  "MARINER-LOST_AT_SEA.title": "Lost at Sea",
+  
+  "MARINER-TENEBRIS.description": "Whenever you play a card, [gold]Submerge[/gold] {Repeat:diff()}.",
+  "MARINER-TENEBRIS.title": "Tenebris",
 
-
+  
   "MARINER-COMMON": "Common Cards",
   
 
@@ -46,8 +51,11 @@
   "MARINER-BARNACLES.description": "Gain {Block:diff()} [gold]Block[/gold].\nAt the start of your next 2 turns, spawn 1 [gold]Barnacle[/gold].",
   "MARINER-BARNACLES.title": "Barnacles!",
 
-  "MARINER-BRINE_BARRIER.description": "Gain {Block:diff()} [gold]Block[/gold].",
+  "MARINER-BRINE_BARRIER.description": "Apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
   "MARINER-BRINE_BARRIER.title": "Brine Barrier",
+
+  "MARINER-REEF_SHIELD.description": "Gain {Block:diff()} [gold]Block[/gold].",
+  "MARINER-REEF_SHIELD.title": "Reef Shield",
 
   "MARINER-DYING_REEF.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen [gold]Abyssal[/gold], spawn 1 [gold]Barnacle[/gold].",
   "MARINER-DYING_REEF.title": "Dying Reef",
@@ -66,11 +74,18 @@
   "MARINER-SHELF_BREAK.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-SHELF_BREAK.title": "Shelf Break",
 
-  "MARINER-TWILIGHT.description": "Apply {WeakPower:diff()} [gold]Weak[/gold].\nWhen [gold]Submerged[/gold], costs 0 this turn.",
+  "MARINER-TWILIGHT.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "MARINER-TWILIGHT.title": "Twilight",
 
   "MARINER-WAVEBREAKER.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen [gold]Sunken[/gold], deal {Damage:diff()} damage to the highest HP enemy.",
   "MARINER-WAVEBREAKER.title": "Wavebreaker",
+
+  "MARINER-CATCH_AND_RELEASE.selectionScreenPrompt": "Choose a card to shuffle.",
+  "MARINER-CATCH_AND_RELEASE.description": "Deal {Damage:diff()} damage.\nShuffle 1 card from your [gold]Discard Pile[/gold] into your [gold]Draw Pile[/gold].",
+  "MARINER-CATCH_AND_RELEASE.title": "Catch and Release",
+  
+  "MARINER-BUOY.description": "Deal {Damage:diff()} damage to ALL enemies.\nWhen [gold]Abyssal[/gold], draw 1 card.",
+  "MARINER-BUOY.title": "Buoy",
 
   
   
@@ -114,7 +129,7 @@
   "MARINER-RIP_CURRENT.description": "Whenever you draw a card with an effect when drawn, draw {Cards:diff()} {Cards:plural:card|cards}.",
   "MARINER-RIP_CURRENT.title": "Rip Current",
   
-  "MARINER-KELP_WALL.description": "Gain {Block:diff()} [gold]Block[/gold].\nThe next {KelpWallPower:diff()} times you are attacked, spawn 1 [gold]Barnacle[/gold].",
+  "MARINER-KELP_WALL.description": "Gain {Block:diff()} [gold]Block[/gold].\nSpawn 2 [gold]Barnacles[/gold].",
   "MARINER-KELP_WALL.title": "Kelp Wall",
 
   "MARINER-MOONPOOL.description": "When [gold]Abyssal[/gold], gain {Energy:energyIcons()}{IfUpgraded:show: and draw {Cards:diff()} {Cards:plural:card|cards}|}.",
