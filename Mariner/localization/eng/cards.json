@@ -29,9 +29,6 @@
 
   "MARINER-ANCHOR_SHOT.description": "Deal {Damage:diff()} damage.",
   "MARINER-ANCHOR_SHOT.title": "Anchor Shot",
-
-  "MARINER-BARNACLE_BLOOM.description": "Deal {Damage:diff()} damage.\nIf [gold]Lethal[/gold], spawn 2 [gold]Barnacles[/gold].",
-  "MARINER-BARNACLE_BLOOM.title": "Barnacle Bloom",
   
   "MARINER-GEYSER.description": "Deal {Damage:diff()} damage.\nWhen drawn, [gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-GEYSER.title": "Geyser",
@@ -90,7 +87,10 @@
   
   
   "MARINER-UNCOMMON": "Uncommon Cards",
-  
+
+
+  "MARINER-BARNACLE_BLOOM.description": "Deal {Damage:diff()} damage.\nIf [gold]Lethal[/gold], spawn 2 [gold]Barnacles[/gold].",
+  "MARINER-BARNACLE_BLOOM.title": "Barnacle Bloom",
   
   "MARINER-BAROMETER.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen drawn, apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
   "MARINER-BAROMETER.title": "Barometer",
@@ -167,6 +167,10 @@
 
   "MARINER-SURF.description": "Shuffle this card into your draw pile.\nThe next time you draw this, draw {Cards:diff()} cards.",
   "MARINER-SURF.title": "Surf",
+
+  "MARINER-NET_CASTING.selectionScreenPrompt": "Choose a card to put back in your Hand.",
+  "MARINER-NET_CASTING.description": "Deal {Damage:diff()} damage to ALL enemies.\nIf [gold]Lethal[/gold], put a card from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold] for each enemy killed.",
+  "MARINER-NET_CASTING.title": "Net Casting",
 
   
   "MARINER-RARE": "Rare Cards",
