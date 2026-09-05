@@ -67,5 +67,9 @@
 
   "MARINER-CONDUIT_POWER.description": "",
   "MARINER-CONDUIT_POWER.smartDescription": "",
-  "MARINER-CONDUIT_POWER.title": "Conduit"
+  "MARINER-CONDUIT_POWER.title": "Conduit",
+
+  "MARINER-BIOLUMINESCENCE_POWER.description": "",
+  "MARINER-BIOLUMINESCENCE_POWER.smartDescription": "",
+  "MARINER-BIOLUMINESCENCE_POWER.title": "Bioluminescence"
 }

@@ -16,7 +16,7 @@ public sealed class BleedingReef() : MarinerCard(1,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.AnyEnemy), IAbyssalCard
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(7M, ValueProp.Move), new PowerVar<VulnerablePower>(1M)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(7M, ValueProp.Move), new PowerVar<VulnerablePower>(1M), new BlockVar(4M, ValueProp.Move)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(MarinerStaticHovertip.Abyssal)];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -29,8 +29,7 @@ public sealed class BleedingReef() : MarinerCard(1,
 
     public async Task BeforeShuffled(PlayerChoiceContext choiceContext)
     {
-        await CreatureCmd.GainBlock(Owner.Creature, PileType.Discard.GetPile(Owner).Cards.Count, ValueProp.Unpowered,
-            null, true);
+        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, null);
     }
 
     protected override void OnUpgrade()

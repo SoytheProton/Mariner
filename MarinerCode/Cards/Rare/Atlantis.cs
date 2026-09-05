@@ -23,11 +23,13 @@ public sealed class Atlantis() : MarinerCard(2,
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<MarbleStatue>()];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<MarbleStatue>(IsUpgraded)];
 
     public async Task OnSunken(PlayerChoiceContext choiceContext)
     {
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<MarbleStatue>(Owner), PileType.Draw, Owner, CardPilePosition.Random));
+        CardModel statue = CombatState.CreateCard<MarbleStatue>(Owner);
+        if (IsUpgraded) CardCmd.Upgrade(statue);
+        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(statue, PileType.Draw, Owner, CardPilePosition.Random));
     }
 
     protected override void OnUpgrade()

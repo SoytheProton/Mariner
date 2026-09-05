@@ -8,7 +8,7 @@
   "MARINER-ANCHOR_SWING.description": "Deal {Damage:diff()} damage.\nWhen [gold]Abyssal[/gold], apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
   "MARINER-ANCHOR_SWING.title": "Anchor Swing",
 
-  "MARINER-REEF_WALK.description": "Gain {Block:diff()} Block.\n[gold]Submerge[/gold] {Submerge:diff()}.",
+  "MARINER-REEF_WALK.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Submerge[/gold] {Submerge:diff()}.",
   "MARINER-REEF_WALK.title": "Reef Walk",
 
   "MARINER-LOST_AT_SEA.description": "Deal {Damage:diff()} damage.\nWhen [gold]Abyssal[/gold], apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
@@ -117,7 +117,7 @@
   "MARINER-AQUATIC_TOPAZ.description": "At the start of each combat, put this card into your [gold]Discard Pile[/gold].\nGain {Energy:energyIcons()}. ",
   "MARINER-AQUATIC_TOPAZ.title": "Aquatic Topaz",
 
-  "MARINER-BLEEDING_REEF.description": "Deal {Damage:diff()} damage.\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].\nWhen [gold]Abyssal[/gold], gain 1 [gold]Block[/gold] for every card in your [gold]Discard Pile[/gold].",
+  "MARINER-BLEEDING_REEF.description": "Deal {Damage:diff()} damage.\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].\nWhen [gold]Abyssal[/gold], gain {Block:diff()} [gold]Block[/gold].",
   "MARINER-BLEEDING_REEF.title": "Bleeding Reef",
   
   "MARINER-HALYARD_WHIP.description": "Deal {Damage:diff()} damage.\nAdd [gold]Trawl[/gold] to the top {Cards:diff()} {Cards:plural:card|cards} of your [gold]Draw Pile[/gold].",
@@ -171,6 +171,12 @@
   "MARINER-NET_CASTING.selectionScreenPrompt": "Choose a card to put back in your Hand.",
   "MARINER-NET_CASTING.description": "Deal {Damage:diff()} damage to ALL enemies.\nIf [gold]Lethal[/gold], put a card from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold] for each enemy killed.",
   "MARINER-NET_CASTING.title": "Net Casting",
+
+  "MARINER-BIOLUMINESCENCE.description": "Add a copy of the third [gold]Sunken[/Agold] card you play each turn into your [gold]Hand[/gold].",
+  "MARINER-BIOLUMINESCENCE.title": "Bioluminescence",
+
+  "MARINER-STARBOARD_STRIKE.description": "Deal {Damage:diff()} damage.\nWhen [gold]Sunken[/gold], gain [gold]Ballast[/gold].",
+  "MARINER-STARBOARD_STRIKE.title": "Starboard Strike",
 
   
   "MARINER-RARE": "Rare Cards",
